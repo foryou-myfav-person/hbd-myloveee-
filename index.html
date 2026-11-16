@@ -1,0 +1,1782 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Ditaaaa ♡</title>
+    
+    
+    <!-- Google Fonts: Clean & Modern -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/photos/logo.png" type="image/x-icon">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Canvas Confetti for Final Celebration -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+        
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        plum: '#9B4568',
+                        darkPlum: '#71334F',
+                        lavender: '#F4C9D8',
+                        softPink: '#FCE4EC',
+                        cream: '#FFF7F9',
+                        warmWhite: '#FFFCFD',
+                        mutedGold: '#D99AAF'
+                    },
+                    fontFamily: {
+                        serif: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        sans: ['"DM Sans"', 'sans-serif'],
+                        hand: ['"Caveat"', 'cursive']
+                    }
+                }
+            }
+        }
+
+    </script>
+
+    <style>
+        /* ==========================================================================
+           CUSTOM ROMANTIC SCRAPBOOK STYLES & TEXTURES
+           ========================================================================== */
+        
+        :root {
+            --plum: #9B4568;
+            --dark-plum: #71334F;
+            --lavender: #F4C9D8;
+            --soft-pink: #FCE4EC;
+            --cream: #FFF7F9;
+            --warm-white: #FFFCFD;
+            --muted-gold: #D99AAF;
+        }
+
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--dark-plum);
+            font-family: 'DM Sans', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+            /* Subtle Vintage Paper Noise & Watercolor Gradient */
+            background-image: 
+                radial-gradient(circle at 12% 18%, rgba(242, 223, 229, 0.75) 0%, transparent 45%),
+                radial-gradient(circle at 88% 82%, rgba(220, 203, 221, 0.65) 0%, transparent 48%),
+                radial-gradient(circle at 80% 15%, rgba(242, 223, 229, 0.5) 0%, transparent 35%),
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.045'/%3E%3C/svg%3E");
+        }
+
+        /* Torn Paper Edge Effect */
+        .torn-paper-top {
+            position: relative;
+        }
+        .torn-paper-top::before {
+            content: "";
+            position: absolute;
+            top: -12px;
+            left: 0;
+            right: 0;
+            height: 14px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 24' preserveAspectRatio='none'%3E%3Cpath d='M0,24 L0,12 Q30,2 60,14 T120,10 T180,15 T240,8 T300,14 T360,9 T420,16 T480,10 T540,14 T600,7 T660,15 T720,11 T780,16 T840,9 T900,14 T960,8 T1020,15 T1080,10 T1140,14 L1200,10 L1200,24 Z' fill='%23FFFDFC'/%3E%3C/svg%3E");
+            background-size: 600px 14px;
+        }
+
+        .torn-paper-bottom {
+            position: relative;
+        }
+        .torn-paper-bottom::after {
+            content: "";
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            right: 0;
+            height: 14px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 24' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L0,12 Q30,22 60,10 T120,14 T180,9 T240,16 T300,10 T360,15 T420,8 T480,14 T540,10 T600,17 T660,9 T720,13 T780,8 T840,15 T900,10 T960,16 T1020,9 T1080,14 T1140,10 L1200,14 L1200,0 Z' fill='%23FFFDFC'/%3E%3C/svg%3E");
+            background-size: 600px 14px;
+        }
+
+        /* Washi Tape */
+        .washi-tape {
+            position: absolute;
+            width: 86px;
+            height: 24px;
+            background: rgba(220, 203, 221, 0.72);
+            backdrop-filter: blur(1px);
+            box-shadow: 0 1px 3px rgba(63, 41, 59, 0.08);
+            z-index: 15;
+            pointer-events: none;
+            clip-path: polygon(4% 0%, 96% 2%, 100% 25%, 97% 50%, 100% 75%, 96% 98%, 3% 96%, 0% 72%, 3% 48%, 0% 22%);
+        }
+        .washi-pink {
+            background: rgba(242, 223, 229, 0.85);
+        }
+        .washi-gold {
+            background: rgba(197, 163, 107, 0.45);
+        }
+
+        /* Polaroid Card Styling */
+        .polaroid-card {
+            background: var(--warm-white);
+            padding: 12px 12px 22px 12px;
+            border-radius: 4px;
+            box-shadow: 0 10px 25px -5px rgba(63, 41, 59, 0.14), 0 4px 10px -2px rgba(63, 41, 59, 0.06);
+            border: 1px solid rgba(220, 203, 221, 0.5);
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+            position: relative;
+        }
+        .polaroid-card:hover {
+            transform: translateY(-6px) rotate(0deg) scale(1.03) !important;
+            box-shadow: 0 18px 35px -8px rgba(86, 54, 79, 0.22);
+            z-index: 20;
+        }
+
+        /* Postage Stamp Decoration */
+        .postage-stamp {
+            background: var(--warm-white);
+            padding: 6px;
+            box-shadow: 0 4px 12px rgba(63, 41, 59, 0.1);
+            border: 2px dashed var(--lavender);
+            position: relative;
+        }
+
+        /* Scrapbook Paper Card */
+        .scrapbook-card {
+            background: var(--warm-white);
+            border-radius: 16px;
+            box-shadow: 0 12px 32px rgba(63, 41, 59, 0.1), 0 2px 6px rgba(63, 41, 59, 0.05);
+            border: 1px solid rgba(220, 203, 221, 0.65);
+            position: relative;
+        }
+
+        /* Section Transitions */
+        .page-section {
+            display: none;
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.55s ease, transform 0.55s ease;
+        }
+        .page-section.active {
+            display: block;
+        }
+        .page-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Primary Romantic Button */
+        .btn-plum {
+            background: linear-gradient(135deg, #684260 0%, #56364F 100%);
+            color: var(--warm-white);
+            border-radius: 9999px;
+            box-shadow: 0 8px 20px -4px rgba(86, 54, 79, 0.45);
+            transition: all 0.25s ease;
+            border: 1px solid rgba(255, 253, 252, 0.2);
+        }
+        .btn-plum:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px -4px rgba(86, 54, 79, 0.55);
+            background: linear-gradient(135deg, #73496A 0%, #3F293B 100%);
+        }
+        .btn-plum:active {
+            transform: translateY(0);
+        }
+
+        /* Envelope Animation */
+        .envelope-wrapper {
+            perspective: 1200px;
+            max-width: 540px;
+            margin: 0 auto;
+        }
+        .envelope-box {
+            position: relative;
+            background: #EAD7D1;
+            border-radius: 12px;
+            box-shadow: 0 16px 38px rgba(63, 41, 59, 0.16);
+            transition: all 0.6s ease;
+        }
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: linear-gradient(180deg, #DFC6BF 0%, #E9D3CC 100%);
+            clip-path: polygon(0 0, 50% 95%, 100% 0);
+            transform-origin: top center;
+            transition: transform 0.75s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.3s;
+            z-index: 12;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+        .envelope-box.opened .envelope-flap {
+            transform: rotateX(180deg);
+            z-index: 1;
+        }
+        .wax-seal {
+            position: absolute;
+            top: 112px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 58px;
+            height: 58px;
+            background: radial-gradient(circle at 35% 35%, #8A547D, #56364F 70%, #3F293B 100%);
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(63, 41, 59, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 15;
+            cursor: pointer;
+            transition: transform 0.35s ease, opacity 0.4s ease;
+            border: 3px solid rgba(197, 163, 107, 0.45);
+        }
+        .wax-seal:hover {
+            transform: translateX(-50%) scale(1.08);
+        }
+        .envelope-box.opened .wax-seal {
+            opacity: 0;
+            pointer-events: none;
+            transform: translateX(-50%) scale(0.5);
+        }
+
+        /* Letter Paper Reveal */
+        .letter-sheet {
+            background: #FFFDF9;
+            background-image: repeating-linear-gradient(transparent, transparent 31px, rgba(220, 203, 221, 0.35) 32px);
+            border: 1px solid rgba(197, 163, 107, 0.35);
+            box-shadow: 0 8px 25px rgba(63, 41, 59, 0.12);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .letter-paragraph {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .letter-paragraph.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Gift Box 3D-ish Bounce & Open Animation */
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(1.5deg); }
+        }
+        .float-anim {
+            animation: gentleFloat 3.5s ease-in-out infinite;
+        }
+        .gift-lid {
+            transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.6s ease;
+            transform-origin: bottom right;
+        }
+        .gift-opened .gift-lid {
+            transform: translateY(-65px) translateX(25px) rotate(24deg);
+            opacity: 0.15;
+        }
+
+        /* Floating Hearts Background Particles */
+        .floating-heart {
+            position: fixed;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.45;
+            animation: floatUp linear infinite;
+        }
+        @keyframes floatUp {
+            0% {
+                transform: translateY(105vh) rotate(0deg) scale(0.8);
+                opacity: 0;
+            }
+            15% {
+                opacity: 0.5;
+            }
+            85% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-10vh) rotate(360deg) scale(1.1);
+                opacity: 0;
+            }
+        }
+
+        /* Shake Animation for Wrong Code */
+        @keyframes gentleShake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-8px); }
+            40% { transform: translateX(8px); }
+            60% { transform: translateX(-5px); }
+            80% { transform: translateX(5px); }
+        }
+        .shake-anim {
+            animation: gentleShake 0.45s ease;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--lavender);
+            border-radius: 999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--plum);
+        }
+    </style>
+</head>
+<body class="selection:bg-softPink selection:text-plum">
+
+    <!-- Floating Ambient Hearts Container -->
+    <div id="floating-hearts-container" aria-hidden="true"></div>
+
+    <!-- ==========================================================================
+         TOP NAVIGATION BAR (Consistent across all pages)
+         ========================================================================== -->
+    <header class="sticky top-0 z-40 px-4 py-3 sm:px-8 backdrop-blur-md bg-cream/80 border-b border-lavender/40">
+        <div class="max-w-5xl mx-auto flex items-center justify-between gap-2">
+            <!-- Brand / Scrapbook Title -->
+            <button onclick="navigateTo('welcome')" class="flex items-center gap-1.5 text-left group focus:outline-none">
+                <span class="font-serif italic text-xl sm:text-2xl font-semibold text-plum group-hover:text-darkPlum transition">
+                    our little world
+                </span>
+                <span class="text-plum text-base">♡</span>
+            </button>
+
+            <!-- Step Dots Indicator (Desktop & Tablet) -->
+            <nav aria-label="Chapter Navigation" class="hidden md:flex items-center gap-2 bg-warmWhite/80 px-3.5 py-1.5 rounded-full border border-lavender/60 shadow-sm">
+                <button onclick="navigateTo('welcome')" id="nav-dot-welcome" class="nav-pill text-xs font-semibold px-2.5 py-1 rounded-full transition">1. Start</button>
+                <span class="text-lavender">•</span>
+                <button onclick="navigateTo('memories')" id="nav-dot-memories" class="nav-pill text-xs font-semibold px-2.5 py-1 rounded-full transition opacity-50" disabled>2. Memories</button>
+                <span class="text-lavender">•</span>
+                <button onclick="navigateTo('letter')" id="nav-dot-letter" class="nav-pill text-xs font-semibold px-2.5 py-1 rounded-full transition opacity-50" disabled>3. Letter</button>
+                <span class="text-lavender">•</span>
+                <button onclick="navigateTo('hunt')" id="nav-dot-hunt" class="nav-pill text-xs font-semibold px-2.5 py-1 rounded-full transition opacity-50" disabled>4. Challenge</button>
+                <span class="text-lavender">•</span>
+                <button onclick="navigateTo('surprise')" id="nav-dot-surprise" class="nav-pill text-xs font-semibold px-2.5 py-1 rounded-full transition opacity-50" disabled>5. Surprise</button>
+            </nav>
+
+            <!-- Music Player Pill Button -->
+            <div class="flex items-center gap-2">
+                <!-- Local MP3 Audio Element (Put your file in assets/music/song.mp3) -->
+                <audio id="bg-music" loop preload="auto">
+                    <source src="assets/music/your-fav.mp3" type="audio/mpeg">
+                </audio>
+
+                <button id="music-toggle-btn" onclick="toggleMusic()" class="flex items-center gap-2 bg-warmWhite hover:bg-softPink/60 text-darkPlum border border-lavender px-3.5 py-1.5 rounded-full shadow-sm transition text-xs sm:text-sm font-semibold">
+                    <span class="text-plum">♫</span>
+                    <span id="music-label">Play Music</span>
+                    <span id="music-icon" class="w-5 h-5 rounded-full bg-plum text-warmWhite flex items-center justify-center text-[10px]">
+                        ▶
+                    </span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+         MAIN CONTENT WRAPPER
+         ========================================================================== -->
+    <main class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-10 pb-20">
+
+        <!-- ======================================================================
+             SECTION 1: WELCOME PAGE
+             ====================================================================== -->
+        <section id="section-welcome" class="page-section active visible">
+            <div class="relative scrapbook-card p-6 sm:p-12 md:p-14 text-center overflow-hidden">
+                
+                <!-- Decorative Washi Tapes & Ribbon SVG -->
+                <div class="washi-tape washi-pink -top-3 left-8 -rotate-12"></div>
+                <div class="washi-tape -top-3 right-10 rotate-12"></div>
+
+                <!-- Top Left Ribbon Bow SVG -->
+                <div class="hidden sm:block absolute top-6 left-8 opacity-85 pointer-events-none">
+                    <svg width="64" height="44" viewBox="0 0 80 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M38 25C25 10 8 8 6 20C4 32 22 33 38 27" fill="#C79EC0" stroke="#56364F" stroke-width="1.5"/>
+                        <path d="M42 25C55 10 72 8 74 20C76 32 58 33 42 27" fill="#C79EC0" stroke="#56364F" stroke-width="1.5"/>
+                        <path d="M36 28L20 48L28 49L40 31" fill="#B284AA" stroke="#56364F" stroke-width="1.5"/>
+                        <path d="M44 28L60 48L52 49L40 31" fill="#B284AA" stroke="#56364F" stroke-width="1.5"/>
+                        <rect x="35" y="21" width="10" height="10" rx="4" fill="#8C5882" stroke="#56364F" stroke-width="1.5"/>
+                    </svg>
+                </div>
+
+                <!-- Top Right Postage Stamp Ornament -->
+                <div class="hidden sm:flex postage-stamp rotate-6 absolute top-7 right-8 w-16 h-20 flex-col items-center justify-center bg-softPink/40 pointer-events-none">
+                    <div class="w-full h-full border border-plum/30 flex flex-col items-center justify-center">
+                        <img src="assets/photos/memory-1.jpeg" onerror="this.src='https://placehold.co/300x300/F2DFE5/56364F?text=Us+%E2%99%A1'" alt="Polaroid kenangan" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Decorative Mini Polaroid Left (Desktop) -->
+                <div class=" lg:block polaroid-card -rotate-6 w-36 absolute bottom-10 left-8 pointer-events-none">
+                    <div class="aspect-square bg-softPink/60 rounded-sm overflow-hidden flex items-center justify-center">
+                        <img src="assets/photos/memory-3.jpg" onerror="this.src='https://placehold.co/300x300/F2DFE5/56364F?text=Us+%E2%99%A1'" alt="Polaroid kenangan" class="w-full h-full object-cover">
+                    </div>
+                    <p class="font-hand text-sm text-plum mt-1.5">my favorite smile ♡</p>
+                </div>
+
+                <!-- Decorative Mini Polaroid Right (Desktop) -->
+                <div class="hidden lg:block polaroid-card rotate-6 w-36 absolute bottom-12 right-8 pointer-events-none">
+                    <div class="aspect-square bg-lavender/50 rounded-sm overflow-hidden flex items-center justify-center">
+                        <img src="assets/photos/memory-1.jpeg" onerror="this.src='https://placehold.co/300x300/DCCBDD/56364F?text=Together+%E2%9C%A8'" alt="Polaroid kenangan" class="w-full h-full object-cover">
+                    </div>
+                    <p class="font-hand text-sm text-plum mt-1.5">always & forever</p>
+                </div>
+
+                <!-- Main Welcome Copy -->
+                <div class="max-w-xl mx-auto relative z-10 py-4 sm:py-6">
+                    <!-- Hand-drawn heart doodle -->
+                    <div class="inline-flex items-center justify-center mb-3 text-plum animate-pulse">
+                        <svg width="28" height="26" viewBox="0 0 28 26" fill="none">
+                            <path d="M14 23.5C14 23.5 3 16.2 3 8.8C3 5.2 5.8 2.5 9.2 2.5C11.4 2.5 13.2 3.7 14 5.3C14.8 3.7 16.6 2.5 18.8 2.5C22.2 2.5 25 5.2 25 8.8C25 16.2 14 23.5 14 23.5Z" stroke="#56364F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+
+                    <p class="text-xs sm:text-sm tracking-[0.22em] uppercase font-bold text-plum/80 mb-3">
+                        A LITTLE SURPRISE FOR YOU
+                    </p>
+
+                    <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold text-darkPlum leading-tight mb-4">
+                        Happy Birthday,<br>
+                        <span class="italic font-semibold text-plum" id="partner-nickname-display">My Favorite Person ♡</span>
+                    </h1>
+
+                    <!-- Divider -->
+                    <div class="flex items-center justify-center gap-3 my-5">
+                        <span class="h-[1px] w-12 bg-mutedGold/60"></span>
+                        <span class="text-mutedGold text-sm">✦</span>
+                        <span class="h-[1px] w-12 bg-mutedGold/60"></span>
+                    </div>
+
+                    <p class="text-sm sm:text-base md:text-lg text-darkPlum/85 leading-relaxed max-w-md mx-auto mb-8">
+                        Today is all about you. I've prepared something special, filled with memories, little surprises, and a journey just for us.
+                    </p>
+
+                    <!-- Primary Action Button -->
+                    <button onclick="unlockAndGo('memories')" class="btn-plum px-8 py-4 text-base sm:text-lg font-semibold inline-flex items-center gap-2.5 group">
+                        <span>Open Your Surprise ♡</span>
+                        <span class="transition-transform group-hover:translate-x-1">→</span>
+                    </button>
+
+                    <!-- Small Footer Note -->
+                    <div class="mt-9 flex items-center justify-center gap-3 text-xs sm:text-sm text-plum/75">
+                        <span class="h-[1px] w-8 bg-lavender"></span>
+                        <span class="font-serif italic text-base">Made with love, just for you.</span>
+                        <span class="h-[1px] w-8 bg-lavender"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             SECTION 2: OUR LITTLE MEMORIES (Scrapbook Photo Gallery)
+             ====================================================================== -->
+        <section id="section-memories" class="page-section">
+            <div class="scrapbook-card p-6 sm:p-10">
+                <!-- Decorative Washi Tapes -->
+                <div class="washi-tape -top-3 left-1/4 -rotate-3"></div>
+                <div class="washi-tape washi-pink -top-3 right-1/4 rotate-3"></div>
+
+                <!-- Header -->
+                <div class="text-center max-w-xl mx-auto mb-8 sm:mb-10">
+                    <p class="text-xs tracking-[0.22em] uppercase font-bold text-plum/75 mb-2">
+                        A COLLECTION OF US
+                    </p>
+
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-darkPlum mb-2">
+                        Our Little Memories
+                    </h2>
+
+                    <p class="font-serif italic text-lg sm:text-xl text-plum/90">
+                        A thousand little moments, all leading me to you.
+                    </p>
+                    <p class="text-xs text-darkPlum/60 mt-2">
+                        (Ketuk foto mana saja untuk membaca cerita di baliknya ♡)
+                    </p>
+                </div>
+
+                <!-- Polaroid Scrapbook Layout -->
+                <div id="memories-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 items-center my-6">
+                    <!-- Rendered dynamically via script.js -->
+                </div>
+
+                <!-- Interactive Memory Slider / Quick Explorer Controls -->
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mt-10 pt-6 border-t border-lavender/50">
+                    <button onclick="navigateTo('welcome')" class="w-full sm:w-auto px-5 py-2.5 rounded-full border border-plum/30 text-plum hover:bg-softPink/50 font-semibold text-sm transition flex items-center justify-center gap-2">
+                        <span>←</span>
+                        <span>Kembali</span>
+                    </button>
+
+                    <!-- Dots Indicator -->
+                    <div id="memory-dots" class="flex items-center gap-2"></div>
+
+                    <button onclick="unlockAndGo('letter')" class="w-full sm:w-auto btn-plum px-6 py-3 text-sm sm:text-base font-semibold flex items-center justify-center gap-2">
+                        <span>Read My Letter For You ♡</span>
+                        <span>→</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             SECTION 3: A LETTER FOR YOU (Interactive Envelope & Vintage Letter)
+             ====================================================================== -->
+        <section id="section-letter" class="page-section">
+            <div class="scrapbook-card p-6 sm:p-10 text-center">
+                <div class="washi-tape washi-gold -top-3 left-12 -rotate-6"></div>
+
+                <!-- Header -->
+                <div class="max-w-xl mx-auto mb-8">
+                    <p class="text-xs tracking-[0.22em] uppercase font-bold text-plum/75 mb-2">
+                        SOMETHING FROM MY HEART
+                    </p>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-darkPlum mb-2">
+                        A Letter For You ♡
+                    </h2>
+                    <p class="text-sm sm:text-base text-darkPlum/80">
+                        There are things I don't always say, but today I want you to know.
+                    </p>
+                </div>
+
+                <!-- Interactive Envelope Container -->
+                <div class="envelope-wrapper my-4">
+                    <div id="envelope-box" class="envelope-box p-4 sm:p-6 pt-24 sm:pt-28 text-left">
+                        <!-- Envelope Top Flap -->
+                        <div class="envelope-flap"></div>
+
+                        <!-- Heart Wax Seal -->
+                        <button onclick="openEnvelope()" aria-label="Buka Amplop" class="wax-seal" title="Klik untuk membuka segel surat">
+                            <span class="text-warmWhite text-xl">♡</span>
+                        </button>
+
+                        <!-- Closed State Prompt -->
+                        <div id="envelope-closed-prompt" class="text-center py-10 relative z-10">
+                            <p class="font-hand text-2xl text-plum mb-4">Ada sepucuk surat kecil untukmu...</p>
+                            <button onclick="openEnvelope()" class="btn-plum px-7 py-3 text-sm sm:text-base font-semibold inline-flex items-center gap-2">
+                                <span>Open My Letter ✉</span>
+                            </button>
+                        </div>
+
+                        <!-- Opened Vintage Letter Paper -->
+                        <div id="letter-content-area" class="hidden letter-sheet rounded-lg p-6 sm:p-9 relative z-10">
+                            <div class="flex justify-between items-center border-b border-lavender/60 pb-3 mb-5">
+                                <span id="letter-salutation">
+                                    Untuk Redita Ayu Putri Pradina,
+                                </span>
+                                <span class="font-hand text-lg text-mutedGold" id="letter-date">
+                                    Special Day ♡
+                                </span>
+                            </div>
+
+                            <!-- Paragraphs revealed progressively -->
+                            <div id="letter-paragraphs-container" class="space-y-4 font-serif text-lg sm:text-xl leading-relaxed text-darkPlum">
+                                <!-- Filled by JS -->
+                            </div>
+
+                            <!-- Signature -->
+                            <div id="letter-signature-block" class="letter-paragraph mt-7 pt-4 border-t border-lavender/40 text-right">
+                                <p class="font-serif italic text-xl text-plum font-semibold">Happy Birthday, Sayang ♡</p>
+                                <p class="font-hand text-2xl text-darkPlum mt-1" id="letter-sender">- Always yours ♡</p>
+                            </div>
+
+                            <!-- Letter Controls -->
+                            <div id="letter-post-actions" class="hidden mt-8 pt-5 border-t border-dashed border-lavender flex flex-col sm:flex-row items-center justify-between gap-3">
+                                <button onclick="replayLetterReveal()" class="text-xs sm:text-sm text-plum hover:underline font-semibold flex items-center gap-1.5">
+                                    <span>↻</span>
+                                    <span>Baca Ulang Perlahan</span>
+                                </button>
+                                <button
+                                    type="button"
+                                    onclick="resetLetterEnvelope()"
+                                    class="px-5 py-3 rounded-full border border-plum/30 text-plum hover:bg-softPink transition text-sm font-semibold">
+
+                                    ↺ Tutup Surat
+
+                                </button>
+
+                                <button onclick="unlockAndGo('hunt')" class="w-full sm:w-auto btn-plum px-6 py-3.5 text-sm sm:text-base font-semibold flex items-center justify-center gap-2 shadow-lg">
+                                    <span>There's Something Waiting For You ♡</span>
+                                    <span>→</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Back Navigation -->
+                <div class="mt-8 flex justify-start">
+                    <button onclick="navigateTo('memories')" class="px-5 py-2 rounded-full border border-plum/30 text-plum hover:bg-softPink/50 font-semibold text-sm transition">
+                        ← Kembali ke Memories
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             SECTION 4: TREASURE HUNT ("The Little Adventure")
+             ====================================================================== -->
+        <section id="section-hunt" class="page-section">
+            <div class="scrapbook-card p-6 sm:p-10">
+                <div class="washi-tape -top-3 left-1/2 -translate-x-1/2 rotate-1"></div>
+
+                <!-- Header -->
+                <div class="text-center max-w-xl mx-auto mb-6">
+                    <p class="text-xs tracking-[0.22em] uppercase font-bold text-plum/75 mb-2">
+                        A LITTLE ADVENTURE FOR REDITA
+                    </p>
+
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-darkPlum mb-2">
+                        Your Surprise Awaits, Sayang!
+                    </h2>
+
+                    <p class="text-sm sm:text-base text-darkPlum/80">
+                        Five little clues, five little adventures,
+                        and one special gift waiting at the end.
+                    </p>
+                </div>
+
+                <!-- 5-Step Progress Tracker -->
+                <div class="max-w-md mx-auto my-7">
+                    <div class="flex items-center justify-between relative">
+                        <!-- Connecting Line -->
+                        <div class="absolute left-4 right-4 top-1/2 -translate-y-1/2 h-[2px] bg-lavender z-0"></div>
+                        <div id="hunt-progress-bar" class="absolute left-4 top-1/2 -translate-y-1/2 h-[2px] bg-plum z-0 transition-all duration-500" style="width: 0%;"></div>
+
+                        <!-- Step Circles 1 to 5 -->
+                        <button onclick="selectChallengeStep(0)" id="step-circle-0" class="step-circle relative z-10 w-9 h-9 rounded-full font-bold text-sm flex items-center justify-center border-2 transition">1</button>
+                        <button onclick="selectChallengeStep(1)" id="step-circle-1" class="step-circle relative z-10 w-9 h-9 rounded-full font-bold text-sm flex items-center justify-center border-2 transition">2</button>
+                        <button onclick="selectChallengeStep(2)" id="step-circle-2" class="step-circle relative z-10 w-9 h-9 rounded-full font-bold text-sm flex items-center justify-center border-2 transition">3</button>
+                        <button onclick="selectChallengeStep(3)" id="step-circle-3" class="step-circle relative z-10 w-9 h-9 rounded-full font-bold text-sm flex items-center justify-center border-2 transition">4</button>
+                        <button onclick="selectChallengeStep(4)" id="step-circle-4" class="step-circle relative z-10 w-9 h-9 rounded-full font-bold text-sm flex items-center justify-center border-2 transition">5</button>
+                    </div>
+                </div>
+
+                <!-- Active Challenge Scrapbook Card -->
+                <div id="challenge-card-wrapper" class="max-w-lg mx-auto relative">
+                    <!-- Sticky Note Decoration -->
+                    <div class="hidden sm:block absolute -right-12 -bottom-5 rotate-6 bg-[#F7E7C4] p-3.5 rounded shadow-md border border-mutedGold/30 w-32 text-center pointer-events-none z-20">
+                        <p class="font-hand text-lg leading-tight text-darkPlum">Good luck,<br>sayang! ♡</p>
+                    </div>
+
+                    <div id="challenge-card" class="bg-warmWhite border-2 border-lavender/80 rounded-2xl p-6 sm:p-8 shadow-lg text-center relative">
+                        <div class="washi-tape washi-pink -top-3 left-1/2 -translate-x-1/2"></div>
+
+                        <p id="challenge-badge" class="text-xs font-bold tracking-[0.2em] uppercase text-plum mb-3">
+                            CHALLENGE 1 / 5
+                        </p>
+
+                        <!-- Custom SVG Illustration per Challenge -->
+                        <div id="challenge-illustration" class="w-16 h-16 mx-auto mb-3 rounded-full bg-softPink/50 flex items-center justify-center text-plum">
+                            <!-- Injected via JS -->
+                        </div>
+
+                        <h3 id="challenge-title" class="font-serif text-2xl font-bold text-darkPlum mb-2">
+                            Judul Tantangan
+                        </h3>
+
+                        <p id="challenge-clue" class="text-sm sm:text-base text-darkPlum/90 leading-relaxed mb-5">
+                            Petunjuk lokasi benda...
+                        </p>
+
+                        <!-- Hint Toggle Box -->
+                        <div class="mb-5">
+                            <button type="button" onclick="toggleHint()" class="text-xs font-semibold text-plum hover:text-darkPlum underline decoration-dotted inline-flex items-center gap-1">
+                                <span>💡</span>
+                                <span id="hint-btn-text">Butuh petunjuk tambahan?</span>
+                            </button>
+                            <div id="challenge-hint-box" class="hidden mt-2 p-3 rounded-xl bg-softPink/40 border border-softPink text-xs sm:text-sm text-darkPlum italic">
+                                <!-- Hint text injected via JS -->
+                            </div>
+                        </div>
+
+                        <!-- Secret Code Form -->
+                        <form id="challenge-form" onsubmit="submitSecretCode(event)" class="space-y-3">
+                            <input 
+                                type="text" 
+                                id="secret-code-input" 
+                                autocomplete="off"
+                                placeholder="Masukkan kode rahasia..." 
+                                class="w-full px-4 py-3.5 rounded-xl border-2 border-lavender focus:border-plum focus:outline-none text-center font-semibold tracking-wider text-darkPlum bg-cream/50 placeholder:font-normal placeholder:tracking-normal"
+                            >
+                            <button type="submit" id="submit-code-btn" class="w-full btn-plum py-3.5 font-semibold text-base flex items-center justify-center gap-2">
+                                <span>Submit Kode ♡</span>
+                            </button>
+                        </form>
+
+                        <!-- Feedback Message Box (Error or Success Memory) -->
+                        <div id="challenge-feedback" class="hidden mt-5 p-4 rounded-xl text-sm leading-relaxed transition-all">
+                            <!-- Filled dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Final Claim Button (Visible once all 5 challenges are solved) -->
+                <div id="hunt-complete-banner" class="hidden max-w-lg mx-auto mt-8 p-6 rounded-2xl bg-gradient-to-r from-softPink/80 via-lavender/50 to-softPink/80 border border-mutedGold/50 text-center shadow-md">
+                    <p class="font-hand text-2xl text-plum mb-1">Yeay! Semua 5 tantangan berhasil kamu pecahkan! 🎉</p>
+                    <p class="text-sm text-darkPlum/85 mb-4">Hadiah terakhirmu sudah siap dibuka sekarang.</p>
+                    <button onclick="unlockAndGo('surprise')" class="btn-plum px-8 py-4 text-base sm:text-lg font-bold inline-flex items-center gap-2 animate-bounce">
+                        <span>Claim Your Final Surprise ♡</span>
+                        <span>→</span>
+                    </button>
+                </div>
+
+                <!-- Footer Controls -->
+                <div class="mt-8 pt-4 border-t border-lavender/40 flex items-center justify-between text-xs">
+                    <button onclick="navigateTo('letter')" class="px-4 py-2 rounded-full border border-plum/30 text-plum hover:bg-softPink/50 font-semibold transition">
+                        ← Kembali ke Surat
+                    </button>
+
+                    <button onclick="resetHuntProgress()" class="text-plum/60 hover:text-plum underline">
+                        Reset Progres Game
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             SECTION 5: THE FINAL SURPRISE
+             ====================================================================== -->
+        <section id="section-surprise" class="page-section">
+            <div class="scrapbook-card p-6 sm:p-12 text-center relative overflow-hidden">
+                <div class="washi-tape washi-pink -top-3 left-10 -rotate-6"></div>
+                <div class="washi-tape -top-3 right-10 rotate-6"></div>
+
+                <!-- Header -->
+                <div class="max-w-xl mx-auto mb-6">
+                    <p class="text-xs tracking-[0.22em] uppercase font-bold text-plum/80 mb-2">
+                        YOU MADE IT, REDITA!
+                    </p>
+
+                    <h2 class="font-serif text-4xl sm:text-6xl font-bold text-darkPlum mb-3">
+                        You Did It, Sayang! ♡
+                    </h2>
+
+                    <p class="text-sm sm:text-base text-darkPlum/85">
+                        Every little clue has brought you here.
+                        Now, it's time to discover your final surprise.
+                    </p>
+                </div>
+
+                <!-- Interactive Gift Box Illustration -->
+                <div id="gift-box-stage" class="my-8 flex flex-col items-center justify-center">
+                    <div id="gift-container" onclick="revealFinalGift()" class="cursor-pointer float-anim relative w-44 h-44 sm:w-52 sm:h-52 flex items-center justify-center select-none group" title="Klik untuk membuka kado!">
+                        <!-- Soft Glow Behind Gift -->
+                        <div class="absolute inset-4 rounded-full bg-softPink blur-xl opacity-80 group-hover:opacity-100 transition"></div>
+                        
+                        <!-- Custom Romantic Gift Box SVG -->
+                        <svg class="w-full h-full relative z-10 drop-shadow-xl" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Gift Base Box -->
+                            <rect x="38" y="88" width="124" height="90" rx="10" fill="#FFFDFC" stroke="#56364F" stroke-width="3"/>
+                            <!-- Vertical Ribbon on Base -->
+                            <rect x="88" y="88" width="24" height="90" fill="#C79EC0" stroke="#56364F" stroke-width="2.5"/>
+                            <!-- Sparkles around box -->
+                            <path d="M22 65L25 72L32 75L25 78L22 85L19 78L12 75L19 72L22 65Z" fill="#C5A36B"/>
+                            <path d="M178 55L180 60L185 62L180 64L178 69L176 64L171 62L176 60L178 55Z" fill="#C5A36B"/>
+                            
+                            <!-- Gift Lid Group (Animates upward when opened) -->
+                            <g class="gift-lid">
+                                <rect x="30" y="64" width="140" height="26" rx="7" fill="#F2DFE5" stroke="#56364F" stroke-width="3"/>
+                                <rect x="88" y="64" width="24" height="26" fill="#B284AA" stroke="#56364F" stroke-width="2.5"/>
+                                <!-- Ribbon Bow -->
+                                <path d="M98 64C78 40 52 38 48 52C44 66 72 66 98 64Z" fill="#C79EC0" stroke="#56364F" stroke-width="2.5"/>
+                                <path d="M102 64C122 40 148 38 152 52C156 66 128 66 102 64Z" fill="#C79EC0" stroke="#56364F" stroke-width="2.5"/>
+                                <circle cx="100" cy="61" r="8" fill="#8C5882" stroke="#56364F" stroke-width="2.5"/>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <button id="open-gift-btn" onclick="revealFinalGift()" class="mt-4 btn-plum px-8 py-4 text-base sm:text-lg font-bold inline-flex items-center gap-2.5 shadow-xl">
+                        <span>🎁 Open Your Gift</span>
+                    </button>
+                </div>
+
+                <!-- Revealed Final Message & Real-World Gift Clue -->
+                <div id="final-reveal-card" class="hidden max-w-xl mx-auto mt-6 text-left">
+                    <div class="bg-warmWhite border-2 border-mutedGold/50 rounded-2xl p-6 sm:p-8 shadow-xl relative">
+                        <div class="washi-tape washi-gold -top-3 left-1/2 -translate-x-1/2"></div>
+
+                        <div class="text-center mb-5">
+                            <span class="inline-block px-3.5 py-1 rounded-full bg-softPink text-plum text-xs font-bold tracking-widest uppercase mb-2">
+                                YOUR REAL-WORLD GIFT LOCATION
+                            </span>
+                            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-darkPlum">
+                                Where Your Gift Is Hiding ♡
+                            </h3>
+                        </div>
+
+                        <!-- Real-world Gift Clue Box -->
+                        <div class="p-5 rounded-xl bg-cream border border-lavender text-center mb-6">
+                            <p class="text-2xl mb-2">📍</p>
+                            <p id="final-gift-location-text" class="font-serif text-xl sm:text-2xl font-semibold text-plum leading-relaxed">
+                                <!-- Injected from CONFIG.finalGiftLocation -->
+                            </p>
+                        </div>
+
+                        <!-- Emotional Closing Message -->
+                        <div class="space-y-3 text-center">
+                            <p id="final-romantic-closing" class="font-serif italic text-lg sm:text-xl text-darkPlum leading-relaxed">
+                                "Happy Birthday, my love. I hope this little adventure reminds you how special you are to me. I love you, always. ♡"
+                            </p>
+                            <p class="font-hand text-2xl text-plum pt-2">
+                                Happy Birthday, Sayang ♡
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+                        <button onclick="fireCelebrationConfetti()" class="px-5 py-2.5 rounded-full bg-softPink text-plum font-semibold text-sm hover:bg-lavender/60 transition">
+                            ✨ Rayakan Lagi
+                        </button>
+                        <button onclick="navigateTo('welcome')" class="px-5 py-2.5 rounded-full border border-plum/30 text-plum font-semibold text-sm hover:bg-warmWhite transition">
+                            ↺ Kembali ke Halaman Awal
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==========================================================================
+         POLAROID LIGHTBOX MODAL (For viewing enlarged memory photos)
+         ========================================================================== -->
+    <div id="memory-modal" class="hidden fixed inset-0 z-50 bg-darkPlum/60 backdrop-blur-sm flex items-center justify-center p-4" onclick="closeMemoryModal(event)">
+        <div class="bg-warmWhite rounded-xl max-w-md w-full p-4 sm:p-6 shadow-2xl border border-lavender relative transform transition-all" onclick="event.stopPropagation()">
+            <div class="washi-tape -top-3 left-1/2 -translate-x-1/2"></div>
+
+            <button onclick="closeMemoryModal()" aria-label="Tutup" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-softPink text-plum hover:bg-plum hover:text-warmWhite flex items-center justify-center font-bold transition">
+                ✕
+            </button>
+
+            <div class="aspect-square w-full rounded-md overflow-hidden bg-cream border border-lavender/50 mb-4">
+                <img id="modal-photo" src="" alt="Kenangan" class="w-full h-full object-cover">
+            </div>
+
+            <div class="text-center px-2">
+                <p id="modal-date" class="font-hand text-lg text-plum/80">Tanggal Kenangan</p>
+                <h3 id="modal-title" class="font-serif text-2xl font-bold text-darkPlum mb-2">Judul Kenangan</h3>
+                <p id="modal-story" class="text-sm text-darkPlum/85 leading-relaxed mb-5">
+                    Cerita singkat kenangan...
+                </p>
+
+                <!-- Prev / Next Memory inside Lightbox -->
+                <div class="flex items-center justify-between pt-3 border-t border-lavender/50">
+                    <button onclick="navigateModalMemory(-1)" class="px-4 py-1.5 rounded-full bg-softPink/70 hover:bg-softPink text-plum font-semibold text-xs sm:text-sm transition">
+                        ← Sebelumnya
+                    </button>
+                    <span id="modal-counter" class="text-xs font-semibold text-plum/70">1 / 4</span>
+                    <button onclick="navigateModalMemory(1)" class="px-4 py-1.5 rounded-full bg-softPink/70 hover:bg-softPink text-plum font-semibold text-xs sm:text-sm transition">
+                        Selanjutnya →
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         CUSTOM TOAST MESSAGE (Replaces alert() completely)
+         ========================================================================== -->
+    <div id="toast-box" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 transition-all duration-300 translate-y-4">
+        <div class="bg-darkPlum text-warmWhite px-5 py-3 rounded-full shadow-xl text-xs sm:text-sm font-semibold flex items-center gap-2 border border-mutedGold/40">
+            <span>♡</span>
+            <span id="toast-message">Pesan notifikasi</span>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         APPLICATION LOGIC & EASY CUSTOMIZATION CONFIG
+         ========================================================================== -->
+    <script>
+        /**
+         * ========================================================================
+         * KONFIGURASI KONTEN PERSONAL (SILAKAN UBAH SESUAI KEINGINAN ANDA)
+         * ========================================================================
+         * Simpan foto asli di folder: assets/photos/
+         * Simpan lagu MP3 di folder: assets/music/song.mp3
+         */
+        
+const CONFIG = {
+    partnerNickname: "Redita ♡",
+    partnerFullName: "Redita Ayu Putri Pradina",
+    senderSignature: "- Someone who loves you ♡",
+
+    memories: [
+        {
+            src: "assets/photos/memory-1.jpeg",
+            fallback: "https://placehold.co/500x500/FCE4EC/71334F?text=The+Beginning",
+            title: "The Beginning ♡",
+            date: "Tanggal kenangan pertama",
+            story: "Semua cerita indah punya awalnya sendiri. Dan aku senang karena salah satu cerita yang berarti bagiku adalah cerita yang melibatkan kamu.",
+            rotation: "-3deg"
+        },
+        {
+            src: "assets/photos/memory-2.jpeg",
+            fallback: "https://placehold.co/500x500/F4C9D8/71334F?text=Little+Happiness",
+            title: "Little Happiness",
+            date: "Tanggal kenangan kedua",
+            story: "Bahagia ternyata bisa sesederhana menghabiskan waktu bersama seseorang yang kita sayang. Terima kasih sudah menjadi bagian dari kebahagiaan kecilku.",
+            rotation: "2deg"
+        },
+        {
+            src: "assets/photos/memory-3.jpg",
+            fallback: "https://placehold.co/500x500/FCE4EC/71334F?text=My+Favorite+Person",
+            title: "My Favorite Person",
+            date: "Tanggal kenangan ketiga",
+            story: "Di antara banyak hal baik yang hadir dalam hidupku, kamu tetap menjadi salah satu yang paling istimewa. Aku bersyukur bisa mengenalmu lebih jauh.",
+            rotation: "-2deg"
+        },
+        {
+            src: "assets/photos/memory-4.jpg",
+            fallback: "https://placehold.co/500x500/FFF7F9/71334F?text=More+Memories",
+            title: "More Memories to Come",
+            date: "Tanggal kenangan keempat",
+            story: "Masih banyak cerita yang belum kita tulis, banyak tempat yang belum kita kunjungi, dan banyak momen yang ingin aku lalui bersamamu.",
+            rotation: "3deg"
+        }
+    ],
+
+    letterDate: "Your Special Day ♡",
+
+    letterParagraphs: [
+        "Selamat ulang tahun, sayang. Hari ini adalah hari spesialmu. Aku mungkin tidak selalu pandai menyampaikan apa yang aku rasakan, tetapi ada banyak hal yang ingin aku ucapkan kepadamu, terutama tentang betapa bersyukurnya aku karena bisa mengenal dan memiliki kamu dalam hidupku.",
+        "Terima kasih sudah hadir dan menjadi bagian dari hari-hariku. Terima kasih untuk setiap perhatian, cerita, tawa, dan hal-hal sederhana yang mungkin tidak selalu kita sadari, tetapi semuanya punya arti tersendiri buatku.",
+        "Aku tidak berharap hidupmu selalu berjalan sempurna. Aku hanya berharap kamu selalu diberi kesehatan, kebahagiaan, kekuatan, dan kemudahan dalam setiap langkah yang kamu ambil. Semoga apa pun yang sedang kamu perjuangkan bisa menemukan jalannya, dan semua hal baik yang kamu impikan perlahan menjadi nyata.",
+        "Kalau suatu hari nanti kamu merasa lelah, jangan lupa bahwa kamu tidak harus selalu terlihat kuat. Kamu juga boleh beristirahat, bercerita, mengeluh, dan menjadi dirimu sendiri. Aku berharap bisa terus menjadi seseorang yang membuatmu merasa nyaman untuk melakukan itu.",
+        "Aku mungkin tidak bisa menjanjikan bahwa setiap hari akan selalu menyenangkan, tetapi aku ingin terus belajar menjadi seseorang yang bisa menemani, memahami, dan menghargai kamu dengan lebih baik.",
+        "Untuk hari ini, nikmati setiap hal baik yang datang kepadamu. Kamu pantas mendapatkan banyak kebahagiaan, bukan hanya hari ini, tetapi juga di hari-hari berikutnya.",
+        "Oh iya, perjalanan kita belum selesai sampai di sini. Setelah membaca surat ini, masih ada sedikit petualangan yang sudah aku siapkan. Coba ikuti setiap petunjuknya dan temukan sesuatu yang sudah menunggumu.",
+        "Sekali lagi, selamat ulang tahun, Redita. Terima kasih sudah menjadi bagian dari cerita hidupku. Semoga kita masih punya banyak halaman untuk ditulis bersama."
+    ],
+
+    challenges: [
+        {
+            title: "Petunjuk Pertama",
+            clue: "Coba cari kode yang tersembunyi di bawah TV. Ada pesan kecil yang menunggumu di sana.",
+            hint: "Periksa bagian bawah meja atau rak TV dengan teliti ya, sayang. ♡",
+            code: "aku tidak suka hoshi, suka nya tedhi",
+            successMemory: "Yeay! hoshi kalah saing. Good job, sayang! ♡",
+            icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>`
+        },
+        {
+            title: "Satu Langkah Lebih Dekat",
+            clue: "Sekarang cari kode di sekitaran aquarium",
+            hint: "Coba perhatikan rak buku atau tempat kamu menyimpan catatan.",
+            code: "LOVEYOU",
+            successMemory: "Satu langkah lebih dekat menuju kejutanmu. Semangat terus, sayang!",
+            icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>`
+        },
+        {
+            title: "Petunjuk Ketiga",
+            clue: "Saatnya mencari di tempat yang sering kamu datangi ketika ingin menikmati sesuatu.",
+            hint: "Coba perhatikan area tempat menyimpan makanan atau minuman.",
+            code: "MISSYOU",
+            successMemory: "Wah, ternyata detektif kecilku hebat juga! ♡",
+            icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg>`
+        },
+        {
+            title: "Hampir Sampai",
+            clue: "Sekarang cari sesuatu di tempat kamu biasa mempersiapkan diri sebelum beraktivitas.",
+            hint: "Coba periksa area cermin atau tempat menyimpan perlengkapan pribadimu.",
+            code: "STILL LOVE YOU",
+            successMemory: "Tinggal satu tantangan lagi, sayang! Aku sudah tidak sabar kamu menemukan hadiahnya.",
+            icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>`
+        },
+        {
+            title: "The Final Clue",
+            clue: "Ini petunjuk terakhir! Cari di tempat paling nyaman untuk beristirahat. Sesuatu sudah menunggumu di sana.",
+            hint: "Coba periksa bagian bawah bantal atau tempat kamu biasa bersantai.",
+            code: "HAPPY BIRTHDAY SAYANG",
+            successMemory: "KAMU BERHASIL! Lima tantangan sudah kamu selesaikan. Sekarang waktunya menemukan kejutan terakhir! ♡",
+            icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777z"/></svg>`
+        }
+    ],
+
+    wrongCodeMessages: [
+        "Wahhh Parah lebih milih hoshi!",
+        "Hmm, sepertinya masih ada yang terlewat. Coba cari lagi, ya!",
+        "Jangan menyerah dulu. Hadiahmu masih menunggu di ujung perjalanan.",
+        "Dikit lagi! Aku yakin kamu bisa menemukan kode yang benar."
+    ],
+
+    finalGiftLocation: "Hadiahnya ada di Sebelah kanan sayang",
+
+    finalClosingQuote: "Happy Birthday, Redita Ayu Putri Pradina. Terima kasih sudah menjadi bagian dari cerita hidupku. Semoga masih banyak halaman yang bisa kita isi bersama. I love you, sayang. Always. ♡"
+};
+
+
+        /**
+         * ========================================================================
+         * STATE MANAGEMENT & LOCALSTORAGE
+         * ========================================================================
+         */
+        const STORAGE_KEY = "our_little_world_progress_v1";
+
+        let appState = {
+            currentSection: "welcome",
+            unlockedSections: ["welcome"],
+            letterOpened: false,
+            solvedChallenges: [], // array of solved indices e.g. [0, 1]
+            activeChallengeIndex: 0,
+            giftOpened: false
+        };
+
+        let currentModalMemoryIndex = 0;
+        let isMusicPlaying = false;
+        let fallbackSynthInterval = null;
+        let audioCtx = null;
+
+        // Load saved progress from LocalStorage
+        function loadProgress() {
+            try {
+                const saved = localStorage.getItem(STORAGE_KEY);
+                if (saved) {
+                    const parsed = JSON.parse(saved);
+                    appState = { ...appState, ...parsed };
+                }
+            } catch (e) {
+                console.warn("LocalStorage unavailable:", e);
+            }
+        }
+
+        // Save progress to LocalStorage
+        function saveProgress() {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(appState));
+            } catch (e) {
+                console.warn("Could not save progress:", e);
+            }
+        }
+
+        /**
+         * ========================================================================
+         * INITIALIZATION ON PAGE LOAD
+         * ========================================================================
+         */
+        window.addEventListener("DOMContentLoaded", () => {
+            loadProgress();
+            applyCustomTexts();
+            createFloatingHearts();
+            renderMemoriesGallery();
+            renderLetterContent();
+            renderTreasureHunt();
+            restoreSavedUIState();
+
+            // Otomatis mencoba memutar musik saat halaman dibuka
+            startMusicAutomatically();
+        });
+
+        function applyCustomTexts() {
+            document.getElementById("partner-nickname-display").textContent = CONFIG.partnerNickname;
+            document.getElementById("letter-date").textContent = CONFIG.letterDate;
+            document.getElementById("letter-sender").textContent = CONFIG.senderSignature;
+            document.getElementById("final-gift-location-text").textContent = CONFIG.finalGiftLocation;
+            document.getElementById("final-romantic-closing").textContent = CONFIG.finalClosingQuote;
+            function applyCustomTexts() {
+    document.getElementById("partner-nickname-display").textContent =
+        CONFIG.partnerNickname;
+
+    document.getElementById("letter-salutation").textContent =
+        `Untuk ${CONFIG.partnerFullName},`;
+
+    document.getElementById("letter-date").textContent =
+        CONFIG.letterDate;
+
+    document.getElementById("letter-sender").textContent =
+        CONFIG.senderSignature;
+
+    document.getElementById("final-gift-location-text").textContent =
+        CONFIG.finalGiftLocation;
+
+    document.getElementById("final-romantic-closing").textContent =
+        CONFIG.finalClosingQuote;
+}
+        }
+
+        function restoreSavedUIState() {
+            // Update top nav indicators
+            updateTopNavIndicators();
+
+            // Restore letter state if previously opened
+
+            // Restore final gift state if previously opened
+            if (appState.giftOpened) {
+                document.getElementById("gift-container").classList.add("gift-opened");
+                document.getElementById("open-gift-btn").classList.add("hidden");
+                document.getElementById("final-reveal-card").classList.remove("hidden");
+            }
+
+            // Navigate to last active section if valid
+            if (appState.currentSection && appState.unlockedSections.includes(appState.currentSection)) {
+                navigateTo(appState.currentSection, false);
+            }
+        }
+
+        /**
+         * ========================================================================
+         * NAVIGATION & SECTION TRANSITIONS
+         * ========================================================================
+         */
+        function unlockAndGo(sectionId) {
+            if (!appState.unlockedSections.includes(sectionId)) {
+                appState.unlockedSections.push(sectionId);
+            }
+            navigateTo(sectionId);
+        }
+
+        function navigateTo(sectionId, shouldSave = true) {
+            // Guard: Prevent jumping to Final Surprise before all 5 challenges are solved
+            if (sectionId === "surprise" && appState.solvedChallenges.length < CONFIG.challenges.length) {
+                showToast("Selesaikan dulu 5 tantangan Treasure Hunt ya sayang ♡");
+                return;
+            }
+
+            if (!appState.unlockedSections.includes(sectionId)) {
+                showToast("Buka bagian sebelumnya terlebih dahulu ya ♡");
+                return;
+            }
+            // Setiap masuk kembali ke bagian surat,
+// tampilkan amplop dalam keadaan tertutup.
+if (sectionId === "letter") {
+    resetLetterEnvelope();
+}
+
+            // Hide all sections smoothly
+            document.querySelectorAll(".page-section").forEach(sec => {
+                sec.classList.remove("visible");
+                setTimeout(() => {
+                    if (!sec.classList.contains("visible")) {
+                        sec.classList.remove("active");
+                    }
+                }, 300);
+            });
+
+            // Show target section
+            const target = document.getElementById(`section-${sectionId}`);
+            if (target) {
+                setTimeout(() => {
+                    target.classList.add("active");
+                    // Trigger reflow for smooth CSS transition
+                    void target.offsetWidth;
+                    target.classList.add("visible");
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                }, 260);
+            }
+
+            appState.currentSection = sectionId;
+            if (shouldSave) saveProgress();
+            updateTopNavIndicators();
+        }
+
+        function updateTopNavIndicators() {
+            const sections = ["welcome", "memories", "letter", "hunt", "surprise"];
+            sections.forEach(sec => {
+                const btn = document.getElementById(`nav-dot-${sec}`);
+                if (!btn) return;
+
+                const isUnlocked = appState.unlockedSections.includes(sec);
+                const isCurrent = appState.currentSection === sec;
+
+                btn.disabled = !isUnlocked;
+                btn.classList.toggle("opacity-40", !isUnlocked);
+                btn.classList.toggle("cursor-not-allowed", !isUnlocked);
+
+                if (isCurrent) {
+                    btn.classList.add("bg-plum", "text-warmWhite");
+                    btn.classList.remove("text-plum");
+                } else {
+                    btn.classList.remove("bg-plum", "text-warmWhite");
+                    btn.classList.add("text-plum");
+                }
+            });
+        }
+
+        /**
+         * ========================================================================
+         * BACKGROUND MUSIC SYSTEM (Local MP3 + Gentle Music-Box Fallback)
+         * ========================================================================
+         */
+        function startMusicAutomatically() {
+    const audio = document.getElementById("bg-music");
+    const label = document.getElementById("music-label");
+    const icon = document.getElementById("music-icon");
+
+    audio.volume = 0.4;
+
+    // Coba putar musik secara otomatis
+    audio.play()
+        .then(() => {
+            isMusicPlaying = true;
+            label.textContent = "Pause Music";
+            icon.textContent = "❚❚";
+        })
+        .catch(() => {
+            // Jika autoplay diblokir browser,
+            // musik diputar setelah interaksi pertama pengguna.
+            const resumeMusic = () => {
+                if (!isMusicPlaying) {
+                    toggleMusic();
+                }
+            };
+
+            document.addEventListener("click", resumeMusic, { once: true });
+            document.addEventListener("touchstart", resumeMusic, { once: true });
+            document.addEventListener("keydown", resumeMusic, { once: true });
+        });
+}
+
+        function toggleMusic() {
+            const audio = document.getElementById("bg-music");
+            const label = document.getElementById("music-label");
+            const icon = document.getElementById("music-icon");
+
+            if (!isMusicPlaying) {
+                // Attempt playing local MP3 first
+                const playPromise = audio.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        isMusicPlaying = true;
+                        label.textContent = "Pause Music";
+                        icon.textContent = "❚❚";
+                    }).catch(() => {
+                        // If local MP3 file is not placed yet, play soft romantic music-box chime
+                        startRomanticMusicBoxFallback();
+                        isMusicPlaying = true;
+                        label.textContent = "Pause Music";
+                        icon.textContent = "❚❚";
+                        showToast("Memutar melodi lembut (tambahkan song.mp3 di assets/music/)");
+                    });
+                }
+            } else {
+                audio.pause();
+                stopRomanticMusicBoxFallback();
+                isMusicPlaying = false;
+                label.textContent = "Play Music";
+                icon.textContent = "▶";
+            }
+        }
+
+        // Gentle Web Audio API Music Box Melody (in case user hasn't added song.mp3 yet)
+        function startRomanticMusicBoxFallback() {
+            try {
+                if (!audioCtx) {
+                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+                if (audioCtx.state === "suspended") audioCtx.resume();
+
+                // Soft romantic arpeggio notes (C major 7 / F major 7)
+                const notes = [523.25, 659.25, 783.99, 987.77, 880.00, 698.46, 587.33, 659.25];
+                let idx = 0;
+
+                const playNote = () => {
+                    if (!isMusicPlaying) return;
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    osc.type = "sine";
+                    osc.frequency.setValueAtTime(notes[idx % notes.length], audioCtx.currentTime);
+
+                    gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.045, audioCtx.currentTime + 0.08);
+                    gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 1.6);
+
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 1.65);
+                    idx++;
+                };
+
+                playNote();
+                fallbackSynthInterval = setInterval(playNote, 950);
+            } catch (e) {
+                console.warn("AudioContext fallback error:", e);
+            }
+        }
+
+        function stopRomanticMusicBoxFallback() {
+            if (fallbackSynthInterval) {
+                clearInterval(fallbackSynthInterval);
+                fallbackSynthInterval = null;
+            }
+        }
+
+        /**
+         * ========================================================================
+         * SECTION 2: MEMORIES GALLERY & LIGHTBOX LOGIC
+         * ========================================================================
+         */
+        function renderMemoriesGallery() {
+            const grid = document.getElementById("memories-grid");
+            const dots = document.getElementById("memory-dots");
+            grid.innerHTML = "";
+            dots.innerHTML = "";
+
+            CONFIG.memories.forEach((item, index) => {
+                // Polaroid Card
+                const card = document.createElement("div");
+                card.className = "polaroid-card cursor-pointer select-none";
+                card.style.transform = `rotate(${item.rotation})`;
+                card.onclick = () => openMemoryModal(index);
+
+                card.innerHTML = `
+                    <div class="washi-tape ${index % 2 === 0 ? '' : 'washi-pink'} -top-3 left-1/2 -translate-x-1/2" style="width: 68px; height: 20px;"></div>
+                    <div class="aspect-square w-full bg-cream rounded-sm overflow-hidden mb-3 border border-lavender/40">
+                        <img src="${item.src}" onerror="this.src='${item.fallback}'" alt="${item.title}" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-hand text-xl font-bold text-darkPlum leading-tight">${item.title}</h3>
+                        <p class="text-xs text-plum/75 mt-0.5">${item.date}</p>
+                    </div>
+                `;
+                grid.appendChild(card);
+
+                // Dot indicator
+                const dot = document.createElement("button");
+                dot.ariaLabel = `Lihat foto ${index + 1}`;
+                dot.className = "w-2.5 h-2.5 rounded-full bg-lavender hover:bg-plum transition";
+                dot.onclick = () => openMemoryModal(index);
+                dots.appendChild(dot);
+            });
+        }
+
+        function openMemoryModal(index) {
+            currentModalMemoryIndex = index;
+            updateModalContent();
+            const modal = document.getElementById("memory-modal");
+            modal.classList.remove("hidden");
+        }
+
+        function updateModalContent() {
+            const item = CONFIG.memories[currentModalMemoryIndex];
+            const img = document.getElementById("modal-photo");
+            img.src = item.src;
+            img.onerror = () => { img.src = item.fallback; };
+
+            document.getElementById("modal-date").textContent = item.date;
+            document.getElementById("modal-title").textContent = item.title;
+            document.getElementById("modal-story").textContent = item.story;
+            document.getElementById("modal-counter").textContent = `${currentModalMemoryIndex + 1} / ${CONFIG.memories.length}`;
+        }
+
+        function navigateModalMemory(step) {
+            const total = CONFIG.memories.length;
+            currentModalMemoryIndex = (currentModalMemoryIndex + step + total) % total;
+            updateModalContent();
+        }
+
+        function closeMemoryModal(event) {
+            if (!event || event.target.id === "memory-modal") {
+                document.getElementById("memory-modal").classList.add("hidden");
+            }
+        }
+
+        /**
+         * ========================================================================
+         * SECTION 3: INTERACTIVE LOVE LETTER LOGIC
+         * ========================================================================
+         */
+        function renderLetterContent() {
+            const container = document.getElementById("letter-paragraphs-container");
+            container.innerHTML = "";
+
+            CONFIG.letterParagraphs.forEach((text) => {
+                const p = document.createElement("p");
+                p.className = "letter-paragraph";
+                p.textContent = text;
+                container.appendChild(p);
+            });
+        }
+
+
+let letterRevealTimers = [];
+
+function resetLetterEnvelope() {
+    // Hentikan animasi reveal yang masih berjalan
+    letterRevealTimers.forEach(timer => clearTimeout(timer));
+    letterRevealTimers = [];
+
+    const box = document.getElementById("envelope-box");
+    const prompt = document.getElementById("envelope-closed-prompt");
+    const letterArea = document.getElementById("letter-content-area");
+    const actions = document.getElementById("letter-post-actions");
+    const signature = document.getElementById("letter-signature-block");
+
+    // Kembalikan amplop ke kondisi tertutup
+    box.classList.remove("opened");
+
+    // Tampilkan kembali tombol pembuka
+    prompt.classList.remove("hidden");
+
+    // Sembunyikan isi surat
+    letterArea.classList.add("hidden");
+
+    // Reset animasi tulisan
+    document.querySelectorAll(".letter-paragraph").forEach(p => {
+        p.classList.remove("revealed");
+    });
+
+    signature.classList.remove("revealed");
+    actions.classList.add("hidden");
+}
+
+        
+function openEnvelope() {
+    const box = document.getElementById("envelope-box");
+
+    // Hindari pembukaan berulang saat animasi berlangsung
+    if (box.classList.contains("opened")) return;
+
+    box.classList.add("opened");
+
+    document.getElementById("envelope-closed-prompt")
+        .classList.add("hidden");
+
+    document.getElementById("letter-content-area")
+        .classList.remove("hidden");
+
+    revealLetterParagraphsSequentially();
+}
+
+
+        
+function revealLetterParagraphsSequentially() {
+    // Hentikan animasi sebelumnya
+    letterRevealTimers.forEach(timer => clearTimeout(timer));
+    letterRevealTimers = [];
+
+    const paragraphs = document.querySelectorAll(
+        "#letter-paragraphs-container .letter-paragraph"
+    );
+
+    const signature = document.getElementById("letter-signature-block");
+    const actions = document.getElementById("letter-post-actions");
+
+    paragraphs.forEach(p => p.classList.remove("revealed"));
+    signature.classList.remove("revealed");
+    actions.classList.add("hidden");
+
+    paragraphs.forEach((p, i) => {
+        const timer = setTimeout(() => {
+            p.classList.add("revealed");
+        }, 400 + i * 650);
+
+        letterRevealTimers.push(timer);
+    });
+
+    const totalDelay = 400 + paragraphs.length * 650;
+
+    letterRevealTimers.push(setTimeout(() => {
+        signature.classList.add("revealed");
+    }, totalDelay));
+
+    letterRevealTimers.push(setTimeout(() => {
+        actions.classList.remove("hidden");
+    }, totalDelay + 500));
+}
+
+function replayLetterReveal() {
+    revealLetterParagraphsSequentially();
+}
+
+
+        function replayLetterReveal() {
+            revealLetterParagraphsSequentially();
+        }
+
+        /**
+         * ========================================================================
+         * SECTION 4: TREASURE HUNT GAME LOGIC (5 CHALLENGES)
+         * ========================================================================
+         */
+        function renderTreasureHunt() {
+            const total = CONFIG.challenges.length;
+            const solvedCount = appState.solvedChallenges.length;
+
+            // Update Progress Bar Width
+            const progressPercent = (solvedCount / total) * 100;
+            document.getElementById("hunt-progress-bar").style.width = `${progressPercent}%`;
+
+            // Update Step Circles 1..5
+            for (let i = 0; i < total; i++) {
+                const circle = document.getElementById(`step-circle-${i}`);
+                const isSolved = appState.solvedChallenges.includes(i);
+                const isCurrent = appState.activeChallengeIndex === i;
+
+                circle.className = "step-circle relative z-10 w-9 h-9 rounded-full font-bold text-sm flex items-center justify-center border-2 transition ";
+
+                if (isSolved) {
+                    circle.className += "bg-plum border-plum text-warmWhite shadow-sm";
+                    circle.textContent = "✓";
+                } else if (isCurrent) {
+                    circle.className += "bg-warmWhite border-plum text-plum ring-4 ring-softPink";
+                    circle.textContent = i + 1;
+                } else {
+                    circle.className += "bg-warmWhite border-lavender text-plum/50";
+                    circle.textContent = i + 1;
+                }
+            }
+
+            // Show or hide completion banner
+            const completeBanner = document.getElementById("hunt-complete-banner");
+            if (solvedCount >= total) {
+                completeBanner.classList.remove("hidden");
+            } else {
+                completeBanner.classList.add("hidden");
+            }
+
+            // Populate Active Challenge Card
+            const idx = appState.activeChallengeIndex;
+            const challenge = CONFIG.challenges[idx];
+            const isAlreadySolved = appState.solvedChallenges.includes(idx);
+
+            document.getElementById("challenge-badge").textContent = `CHALLENGE ${idx + 1} / ${total}`;
+            document.getElementById("challenge-illustration").innerHTML = challenge.icon;
+            document.getElementById("challenge-title").textContent = challenge.title;
+            document.getElementById("challenge-clue").textContent = challenge.clue;
+            document.getElementById("challenge-hint-box").textContent = challenge.hint;
+            document.getElementById("challenge-hint-box").classList.add("hidden");
+            document.getElementById("hint-btn-text").textContent = "Butuh petunjuk tambahan?";
+
+            const input = document.getElementById("secret-code-input");
+            const feedback = document.getElementById("challenge-feedback");
+
+            if (isAlreadySolved) {
+                input.value = challenge.code;
+                input.disabled = true;
+                document.getElementById("submit-code-btn").innerHTML = `<span>Tantangan ${idx + 1} Selesai ✓</span>`;
+                feedback.className = "mt-5 p-4 rounded-xl text-sm leading-relaxed bg-softPink/60 border border-plum/20 text-darkPlum";
+                feedback.innerHTML = `<p class="font-semibold text-plum mb-1">Berhasil! ♡</p><p>${challenge.successMemory}</p>`;
+                feedback.classList.remove("hidden");
+            } else {
+                input.value = "";
+                input.disabled = false;
+                document.getElementById("submit-code-btn").innerHTML = `<span>Submit Kode ♡</span>`;
+                feedback.classList.add("hidden");
+            }
+        }
+
+        function selectChallengeStep(index) {
+            // Allow viewing already solved challenges or the next unsolved challenge
+            const maxAllowed = appState.solvedChallenges.length;
+            if (index <= maxAllowed && index < CONFIG.challenges.length) {
+                appState.activeChallengeIndex = index;
+                renderTreasureHunt();
+            } else {
+                showToast("Selesaikan tantangan sebelumnya dulu ya sayang ♡");
+            }
+        }
+
+        function toggleHint() {
+            const box = document.getElementById("challenge-hint-box");
+            const btnText = document.getElementById("hint-btn-text");
+            const isHidden = box.classList.contains("hidden");
+
+            if (isHidden) {
+                box.classList.remove("hidden");
+                btnText.textContent = "Sembunyikan petunjuk";
+            } else {
+                box.classList.add("hidden");
+                btnText.textContent = "Butuh petunjuk tambahan?";
+            }
+        }
+
+        function submitSecretCode(event) {
+            event.preventDefault();
+            const idx = appState.activeChallengeIndex;
+            const challenge = CONFIG.challenges[idx];
+            const input = document.getElementById("secret-code-input");
+            const feedback = document.getElementById("challenge-feedback");
+            const card = document.getElementById("challenge-card");
+
+            if (appState.solvedChallenges.includes(idx)) {
+                return;
+            }
+
+            const userCode = input.value.trim().toUpperCase();
+            const expectedCode = challenge.code.trim().toUpperCase();
+
+            if (!userCode) {
+                showToast("Masukkan kodenya terlebih dahulu ya ♡");
+                input.focus();
+                return;
+            }
+
+            if (userCode === expectedCode) {
+                // Correct Code!
+                appState.solvedChallenges.push(idx);
+                saveProgress();
+
+                // Small celebratory sparkle
+                if (typeof confetti === "function") {
+                    confetti({
+                        particleCount: 45,
+                        spread: 60,
+                        origin: { y: 0.7 },
+                        colors: ["#56364F", "#F2DFE5", "#DCCBDD", "#C5A36B"]
+                    });
+                }
+
+                renderTreasureHunt();
+
+                // Show Personal Memory & Next Step Button
+                const hasNext = idx + 1 < CONFIG.challenges.length;
+                feedback.className = "mt-5 p-4 rounded-xl text-sm leading-relaxed bg-softPink/70 border border-plum/25 text-darkPlum";
+                feedback.innerHTML = `
+                    <p class="font-bold text-plum text-base mb-1">Yeay, Benar! ♡</p>
+                    <p class="mb-3">${challenge.successMemory}</p>
+                    ${hasNext ? `
+                        <button type="button" onclick="goToNextChallenge()" class="btn-plum px-5 py-2.5 text-xs sm:text-sm font-semibold inline-flex items-center gap-1.5">
+                            <span>Lanjut Tantangan ${idx + 2}</span>
+                            <span>→</span>
+                        </button>
+                    ` : `
+                        <button type="button" onclick="unlockAndGo('surprise')" class="btn-plum px-6 py-3 text-sm font-bold inline-flex items-center gap-2">
+                            <span>Claim Your Final Surprise ♡</span>
+                            <span>→</span>
+                        </button>
+                    `}
+                `;
+                feedback.classList.remove("hidden");
+            } else {
+                // Wrong Code -> Romantic & playful feedback
+                card.classList.remove("shake-anim");
+                void card.offsetWidth;
+                card.classList.add("shake-anim");
+
+                const randomMsg = CONFIG.wrongCodeMessages[Math.floor(Math.random() * CONFIG.wrongCodeMessages.length)];
+                feedback.className = "mt-5 p-3.5 rounded-xl text-sm bg-cream border border-mutedGold/50 text-plum font-semibold";
+                feedback.textContent = randomMsg;
+                feedback.classList.remove("hidden");
+                input.select();
+            }
+        }
+
+        function goToNextChallenge() {
+            if (appState.activeChallengeIndex + 1 < CONFIG.challenges.length) {
+                appState.activeChallengeIndex += 1;
+                renderTreasureHunt();
+            }
+        }
+
+        function resetHuntProgress() {
+            appState.solvedChallenges = [];
+            appState.activeChallengeIndex = 0;
+            appState.giftOpened = false;
+            saveProgress();
+            renderTreasureHunt();
+            showToast("Progres permainan telah di-reset ♡");
+        }
+
+        /**
+         * ========================================================================
+         * SECTION 5: THE FINAL SURPRISE GIFT REVEAL
+         * ========================================================================
+         */
+        function revealFinalGift() {
+            const giftContainer = document.getElementById("gift-container");
+            const openBtn = document.getElementById("open-gift-btn");
+            const revealCard = document.getElementById("final-reveal-card");
+
+            giftContainer.classList.add("gift-opened");
+            openBtn.classList.add("hidden");
+
+            appState.giftOpened = true;
+            saveProgress();
+
+            fireCelebrationConfetti();
+
+            setTimeout(() => {
+                revealCard.classList.remove("hidden");
+                revealCard.scrollIntoView({ behavior: "smooth", block: "nearest" });
+            }, 450);
+        }
+
+        function fireCelebrationConfetti() {
+            if (typeof confetti !== "function") return;
+
+            const colors = ["#56364F", "#DCCBDD", "#F2DFE5", "#C5A36B", "#FFFDFC"];
+            confetti({
+                particleCount: 80,
+                spread: 75,
+                origin: { y: 0.6 },
+                colors
+            });
+            setTimeout(() => {
+                confetti({
+                    particleCount: 55,
+                    angle: 60,
+                    spread: 60,
+                    origin: { x: 0, y: 0.65 },
+                    colors
+                });
+                confetti({
+                    particleCount: 55,
+                    angle: 120,
+                    spread: 60,
+                    origin: { x: 1, y: 0.65 },
+                    colors
+                });
+            }, 300);
+        }
+
+        /**
+         * ========================================================================
+         * AMBIENT FLOATING HEARTS & CUSTOM TOAST
+         * ========================================================================
+         */
+        function createFloatingHearts() {
+            const container = document.getElementById("floating-hearts-container");
+            const symbols = ["♡", "✦", "❀", "♡"];
+
+            for (let i = 0; i < 14; i++) {
+                const el = document.createElement("span");
+                el.className = "floating-heart text-plum/40 select-none";
+                el.textContent = symbols[i % symbols.length];
+                el.style.left = `${Math.random() * 96}%`;
+                el.style.fontSize = `${12 + Math.random() * 14}px`;
+                el.style.animationDuration = `${12 + Math.random() * 14}s`;
+                el.style.animationDelay = `${Math.random() * 10}s`;
+                container.appendChild(el);
+            }
+        }
+
+        let toastTimer = null;
+        function showToast(message) {
+            const box = document.getElementById("toast-box");
+            const msgEl = document.getElementById("toast-message");
+            msgEl.textContent = message;
+
+            box.classList.remove("opacity-0", "translate-y-4");
+            box.classList.add("opacity-100", "translate-y-0");
+
+            if (toastTimer) clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                box.classList.remove("opacity-100", "translate-y-0");
+                box.classList.add("opacity-0", "translate-y-4");
+            }, 3200);
+        }
+
+
+        
+    </script>
+
+    
+
+    
+</body>
+</html>
