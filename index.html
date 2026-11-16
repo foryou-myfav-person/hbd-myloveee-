@@ -14,10 +14,10 @@
     <link rel="shortcut icon" href="assets/photos/logo.png" type="image/x-icon">
     
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Canvas Confetti for Final Celebration -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
         
@@ -40,7 +40,7 @@
                     }
                 }
             }
-        }
+        };
 
     </script>
 
@@ -339,6 +339,312 @@
         ::-webkit-scrollbar-thumb:hover {
             background: var(--plum);
         }
+
+
+
+
+
+/* =========================================================
+   RESPONSIVE IMPROVEMENT — BIRTHDAY WEBSITE
+   Fokus: Mobile & Tablet
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+    /* GLOBAL */
+    body {
+        overflow-x: hidden;
+    }
+
+    main {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+        padding-top: 20px !important;
+        padding-bottom: 40px !important;
+    }
+
+    .scrapbook-card {
+        border-radius: 16px;
+        padding: 20px 16px !important;
+    }
+
+    /* HEADER */
+    header {
+        padding: 10px 12px !important;
+    }
+
+    header .max-w-5xl {
+        gap: 8px;
+    }
+
+    header .font-serif {
+        font-size: 17px !important;
+    }
+
+    #music-toggle-btn {
+        padding: 7px 10px !important;
+        gap: 6px;
+        font-size: 11px !important;
+        white-space: nowrap;
+    }
+
+    #music-label {
+        font-size: 10px;
+    }
+
+    /* SECTION HEADINGS */
+    .page-section h2 {
+        font-size: clamp(25px, 7vw, 34px);
+        line-height: 1.2;
+    }
+
+    .page-section h3 {
+        line-height: 1.3;
+    }
+
+    /* MEMORIES */
+    #memories-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px 12px;
+        align-items: start;
+        margin-top: 24px;
+    }
+
+    #memories-grid .polaroid-card {
+        padding: 8px 8px 14px;
+        width: 100%;
+        min-width: 0;
+    }
+
+    #memories-grid .polaroid-card h3 {
+        font-size: 18px;
+    }
+
+    #memories-grid .polaroid-card p {
+        font-size: 10px;
+    }
+
+    #memories-grid .washi-tape {
+        width: 52px !important;
+        height: 16px !important;
+    }
+
+    /* MEMORY NAVIGATION */
+    #section-memories .border-t {
+        margin-top: 26px;
+        padding-top: 20px;
+    }
+
+    /* LETTER */
+    #section-letter .envelope-wrapper {
+        margin-top: 24px;
+    }
+
+    .envelope-box {
+        padding: 88px 10px 16px !important;
+        border-radius: 12px;
+    }
+
+    .envelope-flap {
+        height: 115px;
+    }
+
+    .wax-seal {
+        top: 83px;
+        width: 48px;
+        height: 48px;
+    }
+
+    #envelope-closed-prompt {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    #letter-content-area {
+        padding: 16px !important;
+    }
+
+    #letter-content-area > div:first-child {
+        flex-wrap: wrap;
+        gap: 6px;
+        font-size: 12px;
+        text-align: left;
+    }
+
+    #letter-paragraphs-container {
+        font-size: 15px;
+        line-height: 1.9;
+    }
+
+    #letter-signature-block {
+        text-align: right;
+    }
+
+    #letter-post-actions {
+        align-items: stretch;
+    }
+
+    #letter-post-actions button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* TREASURE HUNT */
+    #section-hunt .max-w-xl {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    #section-hunt .max-w-md {
+        margin-top: 26px;
+        margin-bottom: 26px;
+    }
+
+    .step-circle {
+        width: 34px;
+        height: 34px;
+        font-size: 12px;
+    }
+
+    #challenge-card {
+        padding: 22px 16px !important;
+    }
+
+    #challenge-title {
+        font-size: 22px;
+    }
+
+    #challenge-clue {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    #secret-code-input {
+        font-size: 14px;
+        padding: 13px 10px;
+    }
+
+    #hunt-complete-banner {
+        padding: 20px 14px;
+    }
+
+    #hunt-complete-banner button {
+        width: 100%;
+        justify-content: center;
+        font-size: 14px;
+    }
+
+    #section-hunt .border-t {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    #section-hunt .border-t button {
+        font-size: 11px;
+    }
+
+    /* FINAL SURPRISE */
+    #gift-box-stage {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    #gift-container {
+        width: 165px;
+        height: 165px;
+    }
+
+    #open-gift-btn {
+        width: 100%;
+        max-width: 260px;
+        justify-content: center;
+        padding: 14px 18px;
+    }
+
+    #final-reveal-card > div:first-child {
+        padding: 20px 15px !important;
+    }
+
+    #final-gift-location-text {
+        font-size: 18px;
+        overflow-wrap: anywhere;
+    }
+
+    #final-romantic-closing {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    #final-reveal-card .mt-6 {
+        flex-direction: column;
+    }
+
+    #final-reveal-card .mt-6 button {
+        width: 100%;
+    }
+
+    /* DECORATION */
+    .washi-tape {
+        width: 62px;
+        height: 18px;
+    }
+
+    /* LIGHTBOX */
+    #memory-modal {
+        padding: 12px;
+    }
+
+    #memory-modal > div {
+        padding: 18px 14px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    #modal-title {
+        font-size: 22px;
+    }
+
+    #memory-modal button {
+        font-size: 11px;
+    }
+
+}
+
+/* SMALL PHONES */
+@media (max-width: 380px) {
+
+    main {
+        padding-left: 9px !important;
+        padding-right: 9px !important;
+    }
+
+    .scrapbook-card {
+        padding: 17px 12px !important;
+    }
+
+    #memories-grid {
+        gap: 16px 9px;
+    }
+
+    #memories-grid .polaroid-card {
+        padding: 6px 6px 12px;
+    }
+
+    #memories-grid .polaroid-card h3 {
+        font-size: 16px;
+    }
+
+    #music-label {
+        display: none;
+    }
+
+    #gift-container {
+        width: 145px;
+        height: 145px;
+    }
+
+}
+
     </style>
 </head>
 <body class="selection:bg-softPink selection:text-plum">
@@ -375,8 +681,8 @@
             <!-- Music Player Pill Button -->
             <div class="flex items-center gap-2">
                 <!-- Local MP3 Audio Element (Put your file in assets/music/song.mp3) -->
-                <audio id="bg-music" loop preload="auto">
-                    <source src="assets/music/your-fav.mp3" type="audio/mpeg">
+                <audio id="bg-music" loop preload="none">
+                    <source src="assets/music/song.mp3" type="audio/mpeg">
                 </audio>
 
                 <button id="music-toggle-btn" onclick="toggleMusic()" class="flex items-center gap-2 bg-warmWhite hover:bg-softPink/60 text-darkPlum border border-lavender px-3.5 py-1.5 rounded-full shadow-sm transition text-xs sm:text-sm font-semibold">
@@ -399,7 +705,7 @@
              SECTION 1: WELCOME PAGE
              ====================================================================== -->
         <section id="section-welcome" class="page-section active visible">
-            <div class="relative scrapbook-card p-6 sm:p-12 md:p-14 text-center overflow-hidden">
+            <div class="relative scrapbook-card p-5 sm:p-12 md:p-14 text-center overflow-hidden">
                 
                 <!-- Decorative Washi Tapes & Ribbon SVG -->
                 <div class="washi-tape washi-pink -top-3 left-8 -rotate-12"></div>
@@ -417,14 +723,20 @@
                 </div>
 
                 <!-- Top Right Postage Stamp Ornament -->
-                <div class="hidden sm:flex postage-stamp rotate-6 absolute top-7 right-8 w-16 h-20 flex-col items-center justify-center bg-softPink/40 pointer-events-none">
-                    <div class="w-full h-full border border-plum/30 flex flex-col items-center justify-center">
-                        <img src="assets/photos/memory-1.jpeg" onerror="this.src='https://placehold.co/300x300/F2DFE5/56364F?text=Us+%E2%99%A1'" alt="Polaroid kenangan" class="w-full h-full object-cover">
-                    </div>
-                </div>
+                <!-- Top Right Postage Stamp Ornament -->
+<div class="hidden sm:flex postage-stamp rotate-6 absolute top-7 right-8 w-16 h-20 flex-col items-center justify-center bg-softPink/40 pointer-events-none">
+    <div class="w-full h-full border border-plum/30 flex flex-col items-center justify-center">
+        <img
+            src="assets/photos/memory-4.jpeg"
+            onerror="this.src='https://placehold.co/300x300/F2DFE5/56364F?text=Us+%E2%99%A1'"
+            alt="Polaroid kenangan"
+            class="w-full h-full object-cover"
+        >
+    </div>
+</div>
 
                 <!-- Decorative Mini Polaroid Left (Desktop) -->
-                <div class=" lg:block polaroid-card -rotate-6 w-36 absolute bottom-10 left-8 pointer-events-none">
+                <div class="hidden lg:block polaroid-card -rotate-6 w-36 absolute bottom-10 left-8 pointer-events-none">
                     <div class="aspect-square bg-softPink/60 rounded-sm overflow-hidden flex items-center justify-center">
                         <img src="assets/photos/memory-3.jpg" onerror="this.src='https://placehold.co/300x300/F2DFE5/56364F?text=Us+%E2%99%A1'" alt="Polaroid kenangan" class="w-full h-full object-cover">
                     </div>
@@ -434,7 +746,7 @@
                 <!-- Decorative Mini Polaroid Right (Desktop) -->
                 <div class="hidden lg:block polaroid-card rotate-6 w-36 absolute bottom-12 right-8 pointer-events-none">
                     <div class="aspect-square bg-lavender/50 rounded-sm overflow-hidden flex items-center justify-center">
-                        <img src="assets/photos/memory-1.jpeg" onerror="this.src='https://placehold.co/300x300/DCCBDD/56364F?text=Together+%E2%9C%A8'" alt="Polaroid kenangan" class="w-full h-full object-cover">
+                        <img src="assets/photos/memory-1.jpg" onerror="this.src='https://placehold.co/300x300/DCCBDD/56364F?text=Together+%E2%9C%A8'" alt="Polaroid kenangan" class="w-full h-full object-cover">
                     </div>
                     <p class="font-hand text-sm text-plum mt-1.5">always & forever</p>
                 </div>
@@ -452,7 +764,7 @@
                         A LITTLE SURPRISE FOR YOU
                     </p>
 
-                    <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold text-darkPlum leading-tight mb-4">
+                    <h1 class="font-serif text-3xl sm:text-6xl md:text-7xl font-bold text-darkPlum leading-tight mb-4">
                         Happy Birthday,<br>
                         <span class="italic font-semibold text-plum" id="partner-nickname-display">My Favorite Person ♡</span>
                     </h1>
@@ -469,10 +781,48 @@
                     </p>
 
                     <!-- Primary Action Button -->
-                    <button onclick="unlockAndGo('memories')" class="btn-plum px-8 py-4 text-base sm:text-lg font-semibold inline-flex items-center gap-2.5 group">
+                    <button onclick="unlockAndGo('memories')" class="btn-plum w-full max-w-xs justify-center px-5 py-3.5 sm:w-auto sm:px-8 sm:py-4 text-sm sm:text-lg font-semibold inline-flex items-center gap-2.5 group">
                         <span>Open Your Surprise ♡</span>
                         <span class="transition-transform group-hover:translate-x-1">→</span>
                     </button>
+                    
+
+                    <!-- MOBILE POLAROID PHOTOS -->
+<div class="flex lg:hidden justify-center items-start gap-5 mt-5 mb-2">
+
+    <!-- Photo Left -->
+    <div class="polaroid-card -rotate-6 w-28 sm:w-32 p-2">
+        <div class="aspect-square rounded-sm overflow-hidden">
+            <img
+                src="assets/photos/memory-3.jpg"
+                onerror="this.src='https://placehold.co/300x300/F2DFE5/56364F?text=Us+%E2%99%A1'"
+                alt="Kenangan bersama"
+                class="w-full h-full object-cover"
+            >
+        </div>
+
+        <p class="font-hand text-xs sm:text-sm text-plum mt-2 text-center">
+            my favorite smile ♡
+        </p>
+    </div>
+
+    <!-- Photo Right -->
+    <div class="polaroid-card rotate-6 w-28 sm:w-32 p-2">
+        <div class="aspect-square rounded-sm overflow-hidden">
+            <img
+                src="assets/photos/memory-1.jpg"
+                onerror="this.src='https://placehold.co/300x300/DCCBDD/56364F?text=Together+%E2%9C%A8'"
+                alt="Kenangan bersama"
+                class="w-full h-full object-cover"
+            >
+        </div>
+
+        <p class="font-hand text-xs sm:text-sm text-plum mt-2 text-center">
+            always & forever
+        </p>
+    </div>
+
+</div>
 
                     <!-- Small Footer Note -->
                     <div class="mt-9 flex items-center justify-center gap-3 text-xs sm:text-sm text-plum/75">
@@ -506,15 +856,117 @@
                     <p class="font-serif italic text-lg sm:text-xl text-plum/90">
                         A thousand little moments, all leading me to you.
                     </p>
-                    <p class="text-xs text-darkPlum/60 mt-2">
+                    <!-- <p class="text-xs text-darkPlum/60 mt-2">
                         (Ketuk foto mana saja untuk membaca cerita di baliknya ♡)
-                    </p>
+                    </p> -->
                 </div>
 
                 <!-- Polaroid Scrapbook Layout -->
-                <div id="memories-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 items-center my-6">
-                    <!-- Rendered dynamically via script.js -->
-                </div>
+                
+<div id="memories-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 items-center my-6">
+
+    <!-- MEMORY 1 -->
+    <div class="polaroid-card cursor-pointer select-none"
+         style="transform: rotate(-3deg);"
+         onclick="openMemoryModal(0)">
+
+        <div class="washi-tape -top-3 left-1/2 -translate-x-1/2"
+             style="width:68px;height:20px;"></div>
+
+        <div class="aspect-square w-full bg-cream rounded-sm overflow-hidden mb-3 border border-lavender/40">
+            <img src="assets/photos/memory-1.jpg"
+                 alt="Kenangan pertama bersama Redita"
+                 class="w-full h-full object-cover transition duration-500 hover:scale-105"
+                 loading="eager">
+        </div>
+
+        <div class="text-center">
+            <h3 class="font-hand text-xl font-bold text-darkPlum leading-tight">
+                The Beginning ♡
+            </h3>
+            <p class="text-xs text-plum/75 mt-0.5">
+                Where our story begins
+            </p>
+        </div>
+    </div>
+
+    <!-- MEMORY 2 -->
+    <div class="polaroid-card cursor-pointer select-none"
+         style="transform: rotate(2deg);"
+         onclick="openMemoryModal(1)">
+
+        <div class="washi-tape washi-pink -top-3 left-1/2 -translate-x-1/2"
+             style="width:68px;height:20px;"></div>
+
+        <div class="aspect-square w-full bg-cream rounded-sm overflow-hidden mb-3 border border-lavender/40">
+            <img src="assets/photos/memory-2.jpeg"
+                 alt="Kenangan kebahagiaan bersama"
+                 class="w-full h-full object-cover transition duration-500 hover:scale-105"
+                 loading="eager">
+        </div>
+
+        <div class="text-center">
+            <h3 class="font-hand text-xl font-bold text-darkPlum leading-tight">
+                Little Happiness
+            </h3>
+            <p class="text-xs text-plum/75 mt-0.5">
+                Small moments, big feelings
+            </p>
+        </div>
+    </div>
+
+    <!-- MEMORY 3 -->
+    <div class="polaroid-card cursor-pointer select-none"
+         style="transform: rotate(-2deg);"
+         onclick="openMemoryModal(2)">
+
+        <div class="washi-tape -top-3 left-1/2 -translate-x-1/2"
+             style="width:68px;height:20px;"></div>
+
+        <div class="aspect-square w-full bg-cream rounded-sm overflow-hidden mb-3 border border-lavender/40">
+            <img src="assets/photos/memory-3.jpg"
+                 alt="Momen bersama orang favorit"
+                 class="w-full h-full object-cover transition duration-500 hover:scale-105"
+                 loading="eager">
+        </div>
+
+        <div class="text-center">
+            <h3 class="font-hand text-xl font-bold text-darkPlum leading-tight">
+                My Favorite Person
+            </h3>
+            <p class="text-xs text-plum/75 mt-0.5">
+                My favorite place is with you
+            </p>
+        </div>
+    </div>
+
+    <!-- MEMORY 4 -->
+    <div class="polaroid-card cursor-pointer select-none"
+         style="transform: rotate(3deg);"
+         onclick="openMemoryModal(3)">
+
+        <div class="washi-tape washi-pink -top-3 left-1/2 -translate-x-1/2"
+             style="width:68px;height:20px;"></div>
+
+        <div class="aspect-square w-full bg-cream rounded-sm overflow-hidden mb-3 border border-lavender/40">
+            <img src="assets/photos/memory-4.jpeg"
+                 alt="Kenangan yang akan terus bertambah"
+                 class="w-full h-full object-cover transition duration-500 hover:scale-105"
+                 loading="eager">
+        </div>
+
+        <div class="text-center">
+            <h3 class="font-hand text-xl font-bold text-darkPlum leading-tight">
+                Our Story Continues
+            </h3>
+            <p class="text-xs text-plum/75 mt-0.5">
+                And this is just the beginning ♡
+            </p>
+        </div>
+    </div>
+
+</div>
+
 
                 <!-- Interactive Memory Slider / Quick Explorer Controls -->
                 <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mt-10 pt-6 border-t border-lavender/50">
@@ -912,38 +1364,32 @@
          */
         
 const CONFIG = {
-    partnerNickname: "Redita ♡",
+    partnerNickname: "Reditaaaa♡",
     partnerFullName: "Redita Ayu Putri Pradina",
-    senderSignature: "- Someone who loves you ♡",
+    senderSignature: "- Tedi Firdaus ",
 
     memories: [
         {
-            src: "assets/photos/memory-1.jpeg",
-            fallback: "https://placehold.co/500x500/FCE4EC/71334F?text=The+Beginning",
             title: "The Beginning ♡",
             date: "Tanggal kenangan pertama",
             story: "Semua cerita indah punya awalnya sendiri. Dan aku senang karena salah satu cerita yang berarti bagiku adalah cerita yang melibatkan kamu.",
             rotation: "-3deg"
         },
         {
-            src: "assets/photos/memory-2.jpeg",
-            fallback: "https://placehold.co/500x500/F4C9D8/71334F?text=Little+Happiness",
             title: "Little Happiness",
             date: "Tanggal kenangan kedua",
             story: "Bahagia ternyata bisa sesederhana menghabiskan waktu bersama seseorang yang kita sayang. Terima kasih sudah menjadi bagian dari kebahagiaan kecilku.",
             rotation: "2deg"
         },
         {
-            src: "assets/photos/memory-3.jpg",
-            fallback: "https://placehold.co/500x500/FCE4EC/71334F?text=My+Favorite+Person",
+
             title: "My Favorite Person",
             date: "Tanggal kenangan ketiga",
             story: "Di antara banyak hal baik yang hadir dalam hidupku, kamu tetap menjadi salah satu yang paling istimewa. Aku bersyukur bisa mengenalmu lebih jauh.",
             rotation: "-2deg"
         },
         {
-            src: "assets/photos/memory-4.jpg",
-            fallback: "https://placehold.co/500x500/FFF7F9/71334F?text=More+Memories",
+            
             title: "More Memories to Come",
             date: "Tanggal kenangan keempat",
             story: "Masih banyak cerita yang belum kita tulis, banyak tempat yang belum kita kunjungi, dan banyak momen yang ingin aku lalui bersamamu.",
@@ -954,14 +1400,14 @@ const CONFIG = {
     letterDate: "Your Special Day ♡",
 
     letterParagraphs: [
-        "Selamat ulang tahun, sayang. Hari ini adalah hari spesialmu. Aku mungkin tidak selalu pandai menyampaikan apa yang aku rasakan, tetapi ada banyak hal yang ingin aku ucapkan kepadamu, terutama tentang betapa bersyukurnya aku karena bisa mengenal dan memiliki kamu dalam hidupku.",
+        "Selamat ulang tahun, sayang. Sebelumnya aku minta maaf karena aku tidak bisa merayakannya langsung di hari ulang tahunmu, anggap saja hari ini adalah hari ulang tahunmu,hehe. Sayang Aku mungkin tidak selalu pandai menyampaikan apa yang aku rasakan, tetapi ada banyak hal yang ingin aku ucapkan kepadamu, terutama tentang betapa bersyukurnya aku karena bisa mengenal dan memiliki kamu kembali dalam hidupku.",
         "Terima kasih sudah hadir dan menjadi bagian dari hari-hariku. Terima kasih untuk setiap perhatian, cerita, tawa, dan hal-hal sederhana yang mungkin tidak selalu kita sadari, tetapi semuanya punya arti tersendiri buatku.",
         "Aku tidak berharap hidupmu selalu berjalan sempurna. Aku hanya berharap kamu selalu diberi kesehatan, kebahagiaan, kekuatan, dan kemudahan dalam setiap langkah yang kamu ambil. Semoga apa pun yang sedang kamu perjuangkan bisa menemukan jalannya, dan semua hal baik yang kamu impikan perlahan menjadi nyata.",
         "Kalau suatu hari nanti kamu merasa lelah, jangan lupa bahwa kamu tidak harus selalu terlihat kuat. Kamu juga boleh beristirahat, bercerita, mengeluh, dan menjadi dirimu sendiri. Aku berharap bisa terus menjadi seseorang yang membuatmu merasa nyaman untuk melakukan itu.",
         "Aku mungkin tidak bisa menjanjikan bahwa setiap hari akan selalu menyenangkan, tetapi aku ingin terus belajar menjadi seseorang yang bisa menemani, memahami, dan menghargai kamu dengan lebih baik.",
         "Untuk hari ini, nikmati setiap hal baik yang datang kepadamu. Kamu pantas mendapatkan banyak kebahagiaan, bukan hanya hari ini, tetapi juga di hari-hari berikutnya.",
         "Oh iya, perjalanan kita belum selesai sampai di sini. Setelah membaca surat ini, masih ada sedikit petualangan yang sudah aku siapkan. Coba ikuti setiap petunjuknya dan temukan sesuatu yang sudah menunggumu.",
-        "Sekali lagi, selamat ulang tahun, Redita. Terima kasih sudah menjadi bagian dari cerita hidupku. Semoga kita masih punya banyak halaman untuk ditulis bersama."
+        "Sekali lagi, selamat ulang tahun, Sayang. Terima kasih sudah menjadi bagian dari cerita hidupku. Semoga kita masih punya banyak halaman untuk ditulis bersama."
     ],
 
     challenges: [
@@ -969,31 +1415,31 @@ const CONFIG = {
             title: "Petunjuk Pertama",
             clue: "Coba cari kode yang tersembunyi di bawah TV. Ada pesan kecil yang menunggumu di sana.",
             hint: "Periksa bagian bawah meja atau rak TV dengan teliti ya, sayang. ♡",
-            code: "aku tidak suka hoshi, suka nya tedhi",
+            code: "aku tidak suka hoshi, sukanya tedhi",
             successMemory: "Yeay! hoshi kalah saing. Good job, sayang! ♡",
             icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>`
         },
         {
             title: "Satu Langkah Lebih Dekat",
-            clue: "Sekarang cari kode di sekitaran aquarium",
-            hint: "Coba perhatikan rak buku atau tempat kamu menyimpan catatan.",
-            code: "LOVEYOU",
-            successMemory: "Satu langkah lebih dekat menuju kejutanmu. Semangat terus, sayang!",
+            clue: "Sekarang kamu keluar rumah, lalu cari sesuatu di rak sepatu",
+            hint: "cari aja sendiriiiii hahahaha",
+            code: "I LOVE YOU SAYANG",
+            successMemory: "Love You Too, Sayang. Satu langkah lebih dekat menuju kejutanmu. Semangat teruss!",
             icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>`
         },
         {
             title: "Petunjuk Ketiga",
-            clue: "Saatnya mencari di tempat yang sering kamu datangi ketika ingin menikmati sesuatu.",
-            hint: "Coba perhatikan area tempat menyimpan makanan atau minuman.",
-            code: "MISSYOU",
-            successMemory: "Wah, ternyata detektif kecilku hebat juga! ♡",
+            clue: "Sekarang kamu ke dalam rumah lagi, cari jawabannya di dalama tas laptop",
+            hint: "siapa yang kamu pilih, hoshi atau tedi?",
+            code: "tedhi lah, jelas.",
+            successMemory: "ahahahaaa mohon maaf yaaa hoshi, kamu udah bashi",
             icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg>`
         },
         {
             title: "Hampir Sampai",
-            clue: "Sekarang cari sesuatu di tempat kamu biasa mempersiapkan diri sebelum beraktivitas.",
-            hint: "Coba periksa area cermin atau tempat menyimpan perlengkapan pribadimu.",
-            code: "STILL LOVE YOU",
+            clue: "Sekarang cari sesuatu di dalam tas yang kamu bawa",
+            hint: "Tanggal lahir kamu",
+            code: "151105",
             successMemory: "Tinggal satu tantangan lagi, sayang! Aku sudah tidak sabar kamu menemukan hadiahnya.",
             icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>`
         },
@@ -1001,22 +1447,22 @@ const CONFIG = {
             title: "The Final Clue",
             clue: "Ini petunjuk terakhir! Cari di tempat paling nyaman untuk beristirahat. Sesuatu sudah menunggumu di sana.",
             hint: "Coba periksa bagian bawah bantal atau tempat kamu biasa bersantai.",
-            code: "HAPPY BIRTHDAY SAYANG",
+            code: "it's my birthday.",
             successMemory: "KAMU BERHASIL! Lima tantangan sudah kamu selesaikan. Sekarang waktunya menemukan kejutan terakhir! ♡",
             icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777z"/></svg>`
         }
     ],
 
     wrongCodeMessages: [
-        "Wahhh Parah lebih milih hoshi!",
+        "Kurang tepat, lebih teliti lagiiiii",
         "Hmm, sepertinya masih ada yang terlewat. Coba cari lagi, ya!",
         "Jangan menyerah dulu. Hadiahmu masih menunggu di ujung perjalanan.",
         "Dikit lagi! Aku yakin kamu bisa menemukan kode yang benar."
     ],
 
-    finalGiftLocation: "Hadiahnya ada di Sebelah kanan sayang",
+    finalGiftLocation: "Hadiahnya ada di lemari depan kamu bagian bawah",
 
-    finalClosingQuote: "Happy Birthday, Redita Ayu Putri Pradina. Terima kasih sudah menjadi bagian dari cerita hidupku. Semoga masih banyak halaman yang bisa kita isi bersama. I love you, sayang. Always. ♡"
+    finalClosingQuote: ""
 };
 
 
@@ -1069,17 +1515,28 @@ const CONFIG = {
          * ========================================================================
          */
         window.addEventListener("DOMContentLoaded", () => {
-            loadProgress();
-            applyCustomTexts();
-            createFloatingHearts();
-            renderMemoriesGallery();
-            renderLetterContent();
-            renderTreasureHunt();
-            restoreSavedUIState();
 
-            // Otomatis mencoba memutar musik saat halaman dibuka
-            startMusicAutomatically();
-        });
+    // Hapus seluruh progres sebelumnya setiap halaman dimuat ulang
+    localStorage.removeItem(STORAGE_KEY);
+
+    // Mulai dari kondisi awal
+    appState = {
+        currentSection: "welcome",
+        unlockedSections: ["welcome"],
+        letterOpened: false,
+        solvedChallenges: [],
+        activeChallengeIndex: 0,
+        giftOpened: false
+    };
+
+    applyCustomTexts();
+    createFloatingHearts();
+    renderMemoriesGallery();
+    renderLetterContent();
+    renderTreasureHunt();
+    restoreSavedUIState();
+
+});
 
         function applyCustomTexts() {
             document.getElementById("partner-nickname-display").textContent = CONFIG.partnerNickname;
@@ -1136,6 +1593,12 @@ const CONFIG = {
             if (!appState.unlockedSections.includes(sectionId)) {
                 appState.unlockedSections.push(sectionId);
             }
+
+            // Otomatis mulai musik saat pertama kali membuka surprise
+            if (!isMusicPlaying) {
+                toggleMusic();
+            }
+
             navigateTo(sectionId);
         }
 
@@ -1211,34 +1674,84 @@ if (sectionId === "letter") {
          * BACKGROUND MUSIC SYSTEM (Local MP3 + Gentle Music-Box Fallback)
          * ========================================================================
          */
-        function startMusicAutomatically() {
+        /**
+ * =========================================================
+ * BACKGROUND MUSIC SYSTEM
+ * =========================================================
+ */
+
+let hasMusicStarted = false;
+let isMusicLoading = false;
+
+async function toggleMusic() {
     const audio = document.getElementById("bg-music");
     const label = document.getElementById("music-label");
     const icon = document.getElementById("music-icon");
+    const button = document.getElementById("music-toggle-btn");
 
-    audio.volume = 0.4;
+    if (!audio || isMusicLoading) return;
 
-    // Coba putar musik secara otomatis
-    audio.play()
-        .then(() => {
-            isMusicPlaying = true;
-            label.textContent = "Pause Music";
-            icon.textContent = "❚❚";
-        })
-        .catch(() => {
-            // Jika autoplay diblokir browser,
-            // musik diputar setelah interaksi pertama pengguna.
-            const resumeMusic = () => {
-                if (!isMusicPlaying) {
-                    toggleMusic();
-                }
-            };
+    // Jika musik sedang berjalan, hentikan
+    if (isMusicPlaying) {
+        audio.pause();
 
-            document.addEventListener("click", resumeMusic, { once: true });
-            document.addEventListener("touchstart", resumeMusic, { once: true });
-            document.addEventListener("keydown", resumeMusic, { once: true });
-        });
+        isMusicPlaying = false;
+
+        label.textContent = "Play Music";
+        icon.textContent = "▶";
+
+        return;
+    }
+
+    // Mulai memutar musik
+    try {
+        isMusicLoading = true;
+        button.disabled = true;
+
+        audio.volume = 0.4;
+
+        await audio.play();
+
+        isMusicPlaying = true;
+        hasMusicStarted = true;
+
+        label.textContent = "Pause Music";
+        icon.textContent = "❚❚";
+
+    } catch (error) {
+        console.error("Music playback error:", error);
+
+        isMusicPlaying = false;
+
+        label.textContent = "Play Music";
+        icon.textContent = "▶";
+
+        showToast("Musik gagal diputar. Periksa file MP3 kamu ya ♡");
+
+    } finally {
+        isMusicLoading = false;
+        button.disabled = false;
+    }
 }
+
+// Sinkronisasi jika audio berhenti atau gagal
+document.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById("bg-music");
+
+    audio.addEventListener("ended", () => {
+        isMusicPlaying = false;
+        document.getElementById("music-label").textContent = "Play Music";
+        document.getElementById("music-icon").textContent = "▶";
+    });
+
+    audio.addEventListener("error", () => {
+        isMusicPlaying = false;
+        document.getElementById("music-label").textContent = "Play Music";
+        document.getElementById("music-icon").textContent = "▶";
+
+        console.error("File musik tidak ditemukan atau tidak dapat dibaca.");
+    });
+});
 
         function toggleMusic() {
             const audio = document.getElementById("bg-music");
@@ -1320,39 +1833,23 @@ if (sectionId === "letter") {
          * SECTION 2: MEMORIES GALLERY & LIGHTBOX LOGIC
          * ========================================================================
          */
-        function renderMemoriesGallery() {
-            const grid = document.getElementById("memories-grid");
-            const dots = document.getElementById("memory-dots");
-            grid.innerHTML = "";
-            dots.innerHTML = "";
+        
+function renderMemoriesGallery() {
+    const dots = document.getElementById("memory-dots");
+    dots.innerHTML = "";
 
-            CONFIG.memories.forEach((item, index) => {
-                // Polaroid Card
-                const card = document.createElement("div");
-                card.className = "polaroid-card cursor-pointer select-none";
-                card.style.transform = `rotate(${item.rotation})`;
-                card.onclick = () => openMemoryModal(index);
+    CONFIG.memories.forEach((item, index) => {
+        const dot = document.createElement("button");
 
-                card.innerHTML = `
-                    <div class="washi-tape ${index % 2 === 0 ? '' : 'washi-pink'} -top-3 left-1/2 -translate-x-1/2" style="width: 68px; height: 20px;"></div>
-                    <div class="aspect-square w-full bg-cream rounded-sm overflow-hidden mb-3 border border-lavender/40">
-                        <img src="${item.src}" onerror="this.src='${item.fallback}'" alt="${item.title}" class="w-full h-full object-cover transition duration-500 hover:scale-105">
-                    </div>
-                    <div class="text-center">
-                        <h3 class="font-hand text-xl font-bold text-darkPlum leading-tight">${item.title}</h3>
-                        <p class="text-xs text-plum/75 mt-0.5">${item.date}</p>
-                    </div>
-                `;
-                grid.appendChild(card);
+        dot.setAttribute("aria-label", `Lihat foto ${index + 1}`);
+        dot.className = "w-2.5 h-2.5 rounded-full bg-lavender hover:bg-plum transition";
 
-                // Dot indicator
-                const dot = document.createElement("button");
-                dot.ariaLabel = `Lihat foto ${index + 1}`;
-                dot.className = "w-2.5 h-2.5 rounded-full bg-lavender hover:bg-plum transition";
-                dot.onclick = () => openMemoryModal(index);
-                dots.appendChild(dot);
-            });
-        }
+        dot.onclick = () => openMemoryModal(index);
+
+        dots.appendChild(dot);
+    });
+}
+
 
         function openMemoryModal(index) {
             currentModalMemoryIndex = index;
@@ -1361,17 +1858,28 @@ if (sectionId === "letter") {
             modal.classList.remove("hidden");
         }
 
-        function updateModalContent() {
-            const item = CONFIG.memories[currentModalMemoryIndex];
-            const img = document.getElementById("modal-photo");
-            img.src = item.src;
-            img.onerror = () => { img.src = item.fallback; };
+        
+function updateModalContent() {
+    const item = CONFIG.memories[currentModalMemoryIndex];
 
-            document.getElementById("modal-date").textContent = item.date;
-            document.getElementById("modal-title").textContent = item.title;
-            document.getElementById("modal-story").textContent = item.story;
-            document.getElementById("modal-counter").textContent = `${currentModalMemoryIndex + 1} / ${CONFIG.memories.length}`;
-        }
+    // Ambil foto langsung dari elemen HTML galeri
+    const galleryImages = document.querySelectorAll(
+        "#memories-grid .polaroid-card img"
+    );
+
+    const img = document.getElementById("modal-photo");
+
+    img.src = galleryImages[currentModalMemoryIndex].src;
+    img.onerror = null;
+
+    document.getElementById("modal-date").textContent = item.date;
+    document.getElementById("modal-title").textContent = item.title;
+    document.getElementById("modal-story").textContent = item.story;
+
+    document.getElementById("modal-counter").textContent =
+        `${currentModalMemoryIndex + 1} / ${CONFIG.memories.length}`;
+}
+
 
         function navigateModalMemory(step) {
             const total = CONFIG.memories.length;
