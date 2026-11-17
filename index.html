@@ -687,22 +687,13 @@
             </nav>
 
             <!-- Music Player Pill Button -->
-            <div class="flex items-center gap-2">
-                <!-- Local MP3 Audio Element (Put your file in assets/music/song.mp3) -->
-                <audio id="bg-music" loop preload="none">
-                    <source src="assets/music/song.mp3" type="audio/mpeg">
-                </audio>
-
-                <button id="music-toggle-btn" onclick="toggleMusic()" class="flex items-center gap-2 bg-warmWhite hover:bg-softPink/60 text-darkPlum border border-lavender px-3.5 py-1.5 rounded-full shadow-sm transition text-xs sm:text-sm font-semibold">
-                    <span class="text-plum">♫</span>
-                    <span id="music-label">Play Music</span>
-                    <span id="music-icon" class="w-5 h-5 rounded-full bg-plum text-warmWhite flex items-center justify-center text-[10px]">
-                        ▶
-                    </span>
-                </button>
-            </div>
+            
         </div>
     </header>
+
+    <audio id="bg-music" loop preload="none">
+    <source src="https://foryou-myfav-person.github.io/hbd-myloveee-/assets/music/song.mp3" type="audio/mpeg">
+    </audio>
 
     <!-- ==========================================================================
          MAIN CONTENT WRAPPER
@@ -1598,18 +1589,17 @@ const CONFIG = {
          * ========================================================================
          */
         function unlockAndGo(sectionId) {
-    if (!appState.unlockedSections.includes(sectionId)) {
-        appState.unlockedSections.push(sectionId);
-    }
-
-    // Musik otomatis diputar saat pertama kali membuka Memories
-    if (sectionId === "memories" && appState.currentSection === "welcome") {
-        playBackgroundMusic();
-    }
-
-    navigateTo(sectionId);
-}
-
+            if (!appState.unlockedSections.includes(sectionId)) {
+                appState.unlockedSections.push(sectionId);
+            }
+        
+            // Putar musik ketika tombol Open Your Surprise diklik
+            if (sectionId === "memories" && appState.currentSection === "welcome") {
+                playBackgroundMusic();
+            }
+        
+            navigateTo(sectionId);
+        }
         function navigateTo(sectionId, shouldSave = true) {
             // Guard: Prevent jumping to Final Surprise before all 5 challenges are solved
             if (sectionId === "surprise" && appState.solvedChallenges.length < CONFIG.challenges.length) {
@@ -1702,15 +1692,15 @@ function playBackgroundMusic() {
     const label = document.getElementById("music-label");
     const icon = document.getElementById("music-icon");
 
-    if (!audio || isMusicPlaying || isMusicLoading) return;
+    if (!audio || isMusicLoading || isMusicPlaying) return;
 
     isMusicLoading = true;
     audio.volume = 0.4;
 
-    // Play dipanggil langsung dari interaksi klik pengguna
+    // Dipanggil langsung saat interaksi klik pengguna
     const playPromise = audio.play();
 
-    if (playPromise && typeof playPromise.then === "function") {
+    if (playPromise) {
         playPromise
             .then(() => {
                 isMusicPlaying = true;
@@ -1718,29 +1708,20 @@ function playBackgroundMusic() {
 
                 stopRomanticMusicBoxFallback();
 
-                label.textContent = "Pause Music";
-                icon.textContent = "❚❚";
+                if (label) label.textContent = "Pause Music";
+                if (icon) icon.textContent = "❚❚";
             })
             .catch((error) => {
-                console.warn("MP3 gagal diputar, mencoba fallback:", error);
+                console.error("Musik gagal diputar:", error);
 
-                // Gunakan musik alternatif jika MP3 gagal
-                isMusicPlaying = true;
-                startRomanticMusicBoxFallback();
+                isMusicPlaying = false;
 
-                label.textContent = "Pause Music";
-                icon.textContent = "❚❚";
+                if (label) label.textContent = "Play Music";
+                if (icon) icon.textContent = "▶";
             })
             .finally(() => {
                 isMusicLoading = false;
             });
-    } else {
-        isMusicPlaying = true;
-        hasMusicStarted = true;
-        isMusicLoading = false;
-
-        label.textContent = "Pause Music";
-        icon.textContent = "❚❚";
     }
 }
 
