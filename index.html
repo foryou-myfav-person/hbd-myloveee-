@@ -645,6 +645,14 @@
 
 }
 
+@media (max-width: 767px) {
+    header {
+        display: none !important;
+    }
+}
+
+
+    
     </style>
 </head>
 <body class="selection:bg-softPink selection:text-plum">
@@ -1590,17 +1598,17 @@ const CONFIG = {
          * ========================================================================
          */
         function unlockAndGo(sectionId) {
-            if (!appState.unlockedSections.includes(sectionId)) {
-                appState.unlockedSections.push(sectionId);
-            }
+    if (!appState.unlockedSections.includes(sectionId)) {
+        appState.unlockedSections.push(sectionId);
+    }
 
-            // Otomatis mulai musik saat pertama kali membuka surprise
-            if (!isMusicPlaying) {
-                toggleMusic();
-            }
+    // Musik otomatis diputar saat pertama kali membuka Memories
+    if (sectionId === "memories" && appState.currentSection === "welcome") {
+        playBackgroundMusic();
+    }
 
-            navigateTo(sectionId);
-        }
+    navigateTo(sectionId);
+}
 
         function navigateTo(sectionId, shouldSave = true) {
             // Guard: Prevent jumping to Final Surprise before all 5 challenges are solved
@@ -1680,110 +1688,99 @@ if (sectionId === "letter") {
  * =========================================================
  */
 
+/**
+ * =========================================================
+ * BACKGROUND MUSIC SYSTEM
+ * =========================================================
+ */
+
 let hasMusicStarted = false;
 let isMusicLoading = false;
 
-async function toggleMusic() {
+function playBackgroundMusic() {
     const audio = document.getElementById("bg-music");
     const label = document.getElementById("music-label");
     const icon = document.getElementById("music-icon");
-    const button = document.getElementById("music-toggle-btn");
 
-    if (!audio || isMusicLoading) return;
+    if (!audio || isMusicPlaying || isMusicLoading) return;
 
-    // Jika musik sedang berjalan, hentikan
-    if (isMusicPlaying) {
-        audio.pause();
+    isMusicLoading = true;
+    audio.volume = 0.4;
 
-        isMusicPlaying = false;
+    // Play dipanggil langsung dari interaksi klik pengguna
+    const playPromise = audio.play();
 
-        label.textContent = "Play Music";
-        icon.textContent = "▶";
+    if (playPromise && typeof playPromise.then === "function") {
+        playPromise
+            .then(() => {
+                isMusicPlaying = true;
+                hasMusicStarted = true;
 
-        return;
-    }
+                stopRomanticMusicBoxFallback();
 
-    // Mulai memutar musik
-    try {
-        isMusicLoading = true;
-        button.disabled = true;
+                label.textContent = "Pause Music";
+                icon.textContent = "❚❚";
+            })
+            .catch((error) => {
+                console.warn("MP3 gagal diputar, mencoba fallback:", error);
 
-        audio.volume = 0.4;
+                // Gunakan musik alternatif jika MP3 gagal
+                isMusicPlaying = true;
+                startRomanticMusicBoxFallback();
 
-        await audio.play();
-
+                label.textContent = "Pause Music";
+                icon.textContent = "❚❚";
+            })
+            .finally(() => {
+                isMusicLoading = false;
+            });
+    } else {
         isMusicPlaying = true;
         hasMusicStarted = true;
+        isMusicLoading = false;
 
         label.textContent = "Pause Music";
         icon.textContent = "❚❚";
+    }
+}
 
-    } catch (error) {
-        console.error("Music playback error:", error);
+function toggleMusic() {
+    const audio = document.getElementById("bg-music");
+    const label = document.getElementById("music-label");
+    const icon = document.getElementById("music-icon");
+
+    if (!audio || isMusicLoading) return;
+
+    if (isMusicPlaying) {
+        audio.pause();
+        stopRomanticMusicBoxFallback();
 
         isMusicPlaying = false;
 
         label.textContent = "Play Music";
         icon.textContent = "▶";
-
-        showToast("Musik gagal diputar. Periksa file MP3 kamu ya ♡");
-
-    } finally {
-        isMusicLoading = false;
-        button.disabled = false;
+    } else {
+        playBackgroundMusic();
     }
 }
 
-// Sinkronisasi jika audio berhenti atau gagal
+// Sinkronisasi status audio
 document.addEventListener("DOMContentLoaded", () => {
     const audio = document.getElementById("bg-music");
 
+    if (!audio) return;
+
     audio.addEventListener("ended", () => {
         isMusicPlaying = false;
+
         document.getElementById("music-label").textContent = "Play Music";
         document.getElementById("music-icon").textContent = "▶";
     });
 
     audio.addEventListener("error", () => {
-        isMusicPlaying = false;
-        document.getElementById("music-label").textContent = "Play Music";
-        document.getElementById("music-icon").textContent = "▶";
-
         console.error("File musik tidak ditemukan atau tidak dapat dibaca.");
     });
 });
-
-        function toggleMusic() {
-            const audio = document.getElementById("bg-music");
-            const label = document.getElementById("music-label");
-            const icon = document.getElementById("music-icon");
-
-            if (!isMusicPlaying) {
-                // Attempt playing local MP3 first
-                const playPromise = audio.play();
-                if (playPromise !== undefined) {
-                    playPromise.then(() => {
-                        isMusicPlaying = true;
-                        label.textContent = "Pause Music";
-                        icon.textContent = "❚❚";
-                    }).catch(() => {
-                        // If local MP3 file is not placed yet, play soft romantic music-box chime
-                        startRomanticMusicBoxFallback();
-                        isMusicPlaying = true;
-                        label.textContent = "Pause Music";
-                        icon.textContent = "❚❚";
-                        showToast("Memutar melodi lembut (tambahkan song.mp3 di assets/music/)");
-                    });
-                }
-            } else {
-                audio.pause();
-                stopRomanticMusicBoxFallback();
-                isMusicPlaying = false;
-                label.textContent = "Play Music";
-                icon.textContent = "▶";
-            }
-        }
-
         // Gentle Web Audio API Music Box Melody (in case user hasn't added song.mp3 yet)
         function startRomanticMusicBoxFallback() {
             try {
